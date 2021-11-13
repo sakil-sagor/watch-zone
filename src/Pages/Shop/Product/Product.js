@@ -4,7 +4,7 @@ import './Product.css'
 
 const Product = (props) => {
     const { _id, InStock, name, model, rating, price, img } = props.product;
-    console.log(InStock);
+
     return (
         <div className=" ">
             <div className="shadow-xl bg-white rounded hover:shadow-2xl border p-2">
@@ -16,7 +16,7 @@ const Product = (props) => {
                             <p className="text-2xl text-center ">Stock Out</p>
                         </div>
                     }
-                    <img className="rounded md:h-60 w-full imgage" src={img} alt="" />
+                    <img className="rounded  w-full imgage" src={img} alt="" />
 
                 </div>
                 <hr className="mt-2" />
@@ -38,9 +38,12 @@ const Product = (props) => {
 
                     <div className="flex pt-4 justify-between">
                         <NavLink className="transition duration-500 border border-indigo-900 text-indigo-900 bg-white hover:bg-indigo-900 hover:text-white px-3 py-2 rounded font-semibold  d-button " to={`shop/${_id}`}> Details</NavLink>
-
-                        <NavLink className="transition duration-500 bg-indigo-900 text-white px-3 py-2 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to={`bookNow/${_id}`}>Order Now</NavLink>
-
+                        {
+                            InStock ?
+                                <NavLink className="transition duration-500 bg-indigo-900 text-white px-3 py-2 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to={`bookNow/${_id}`}>Order Now</NavLink>
+                                :
+                                <button disabled className="transition  cursor-not-allowed duration-500 bg-gray-500 text-white px-3 py-2 rounded font-semibold   d-button-solid border " >Order Now</button>
+                        }
                     </div>
                 </div>
 

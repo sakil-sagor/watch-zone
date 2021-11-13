@@ -20,17 +20,22 @@ const ProductDetails = () => {
     const handelfield = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const fieldData = { ...orders }
-        fieldData[field] = value;
-        setOrders(fieldData)
+        console.log(value);
+        if (value > 0) {
+            console.log(value);
+            const fieldData = { ...orders }
+            fieldData[field] = value;
+            setOrders(fieldData)
+        }
+        else {
+            setOrders({})
+        }
+
     }
 
 
     const [orederNow, setOrderNow] = useState(false)
-    // const handelOrder = e => {
-    //     console.log("ami valo asi");
-    //     e.preventDefault();
-    // }
+
 
 
 
@@ -57,7 +62,7 @@ const ProductDetails = () => {
                                     <br />
                                     <h1 className=" ">Gender : <span className="text-indigo-900 font-semibold">{product?.Gender}</span></h1>
                                     <h1 className=" ">Color : <span className="text-indigo-900 font-semibold">{product?.color}</span></h1>
-                                    <h1 className=" ">In Stock :<span className={product?.InStock ? "text-indigo-900 font-semibold" : "text-red-700 font-semibold"}> {product?.InStock ? 'Avaiable' : "Out of Stock"}</span></h1>
+                                    <h1 className=" ">Stock :<span className={product?.InStock ? "text-indigo-900 font-semibold" : "text-red-700 font-semibold"}> {product?.InStock ? 'Avaiable' : "Out of Stock"}</span></h1>
                                     <br />
                                     <hr />
                                     <br />

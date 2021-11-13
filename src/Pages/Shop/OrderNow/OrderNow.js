@@ -5,6 +5,7 @@ import useAuth from '../../../Hooks/useAuth';
 const OrderNow = (props) => {
     const { user } = useAuth();
     const { _id, img, name, price } = props.product;
+    console.log();
     const { quantity } = props.orders;
     const initailInfo = { userName: user.displayName, email: user.email }
     const [orderData, setOrderData] = useState(initailInfo)

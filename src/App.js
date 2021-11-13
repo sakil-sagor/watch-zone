@@ -24,6 +24,7 @@ import Payment from './Pages/Dashboard/Payment/Payment';
 import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import DirectOrder from './Pages/Shop/DirectOrder/DirectOrder';
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
             </Route>
             <PrivateRoute exact path="/shop/:productId">
               <ProductDetails></ProductDetails>
+            </PrivateRoute>
+            <PrivateRoute exact path="/bookNow/:productId">
+              <DirectOrder></DirectOrder>
             </PrivateRoute>
             <PrivateRoute exact path="/orderNow">
               <OrderNow></OrderNow>
