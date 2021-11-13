@@ -13,7 +13,7 @@ const Footer = () => {
                         <h1 className="text-4xl font-bold text-white ">Time- <span className="text-blue-300">Zone</span> </h1>
                     </NavLink>
                     <p className="py-8 text-white font-semibold">Our goal is to deliver quality of care in a courteous, respectful, and compassionate manner. We hope you will allow us to care for you and strive to be the first and best choice for your family.</p>
-                    <NavLink className="text-blue-300 font-semibold text-lg uppercase hover:text-white" to="/appointment">Shopping Now <i class="fas fa-arrow-right ml-1"></i></NavLink>
+                    <NavLink className="text-blue-300 font-semibold text-lg uppercase hover:text-white" to="/shop">Shopping Now <i class="fas fa-arrow-right ml-1"></i></NavLink>
                 </div>
                 {/* middle section */}
                 <div className="col-sapn-1 ">
@@ -38,7 +38,7 @@ const Footer = () => {
                             <li className="cursor-pointer hover:underline"><NavLink to="/login">Login</NavLink></li>
                             <li className="cursor-pointer hover:underline"><NavLink to="/register">Register</NavLink></li>
                             <li className="cursor-pointer hover:underline"><NavLink to="/aboutUs"> About Us</NavLink></li>
-                            <li className="cursor-pointer hover:underline"><NavLink to="/services"> Services</NavLink></li>
+                            <li className="cursor-pointer hover:underline"><NavLink to="/contactUs"> Contact Us</NavLink></li>
                         </ul >
                     </div >
                 </div>

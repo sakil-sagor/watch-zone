@@ -10,7 +10,7 @@ const AdminRoute = ({ children, ...rest }) => {
         return '';
 
     }
-    console.log(admin);
+
     return (
         <Route
             {...rest}

@@ -7,7 +7,6 @@ import ProductTab from './ProductTab/ProductTab';
 const ProductDetails = () => {
     const [product, setProduct] = useState({})
     const { productId } = useParams();
-    console.log(productId);
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/products/${productId}`
         fetch(url)

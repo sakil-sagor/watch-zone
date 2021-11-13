@@ -17,8 +17,11 @@ const ProfileShortcut = () => {
                 {
                     user.displayName ? <h1 className="text-lg font-semibold text-indigo-900">{user.displayName}</h1> : ''
                 }
-                <button className="py-2 px-3 bg-indigo-900 text-white rounded-full my-4 hover:bg-indigo-800" >View Profile</button>
-                <br />
+                <div>
+                    <NavLink to='/viewProfile'>
+                        <button className="py-2 px-3 bg-indigo-900 text-white rounded-full my-4 hover:bg-indigo-800" >View Profile</button>
+                    </NavLink>
+                </div>
             </div>
             <hr />
 

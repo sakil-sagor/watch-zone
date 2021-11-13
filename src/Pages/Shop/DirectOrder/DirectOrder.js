@@ -10,14 +10,12 @@ const DirectOrder = () => {
         quantity: '1'
     }
     const { productId } = useParams();
-    console.log(productId);
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
-    console.log(product);
 
     return (
         <div className="py-24">

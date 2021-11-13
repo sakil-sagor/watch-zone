@@ -25,6 +25,7 @@ import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import DirectOrder from './Pages/Shop/DirectOrder/DirectOrder';
+import ViewProfile from './Pages/Dashboard/ViewProfile/ViewProfile';
 
 function App() {
   return (
@@ -87,6 +88,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute exact path="/myReview">
               <MyReview></MyReview>
+            </PrivateRoute>
+            <PrivateRoute exact path="/viewProfile">
+              <ViewProfile></ViewProfile>
             </PrivateRoute>
             <PrivateRoute exact path="/manageProducts">
               <ManageProducts></ManageProducts>
