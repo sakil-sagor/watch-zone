@@ -1,4 +1,10 @@
-.App {
+html {
+  scroll-behavior: smooth;
+}
+.full-width-all{
+  max-width: 1200px;
+}
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +42,4 @@
     transform: rotate(360deg);
   }
 }
+ */

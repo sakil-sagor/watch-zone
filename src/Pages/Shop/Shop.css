@@ -1,0 +1,6 @@
+.shop-page-banner{
+    background-image: linear-gradient(rgb(3 169 244 / 70%), #2a245ae8), url(../../images/22.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

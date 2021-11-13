@@ -1,0 +1,10 @@
+.banner-container{
+   
+    background-image: linear-gradient(rgb(247 247 247/10%), rgb(199 210 254)), url(../../../images/30.png);
+    background-repeat: no-repeat;
+    background-position:  center right;
+    background-size:auto ;
+}
+.banner-home{
+    background-image: linear-gradient(rgb(247 247 247), rgb(199 210 254));
+}

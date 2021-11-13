@@ -1,0 +1,47 @@
+.course-area-all{
+    padding: 50px  0;
+    
+}
+.course-tab-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-size: 17px;
+    border: 1px solid rgba(128, 128, 128, 0.308);
+    font-weight: 600;
+
+}
+.services-tabs {
+    width: 25%;
+    padding:0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.services-active-tabs {
+    color:rgb(190, 24, 93);
+    background: rgb(49 46 129);
+    color: white;
+    
+}
+.services-tab-content {
+    min-height: 500px;
+    display: none;
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.services-tab-active-content {
+    display: block;
+    transition: width 2s;
+    
+}
+
+.faq-toggle-none{
+    display:none;
+}

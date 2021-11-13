@@ -1,0 +1,6 @@
+.cotanct-bottom-banner{
+    background-image: linear-gradient(rgb(3 169 244 / 45%), #2a245ae8), url(../../images/c1.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
