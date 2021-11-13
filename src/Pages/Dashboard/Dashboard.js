@@ -19,7 +19,7 @@ import AddProduct from './AddProduct/AddProduct';
 const Dashboard = () => {
     const { user, logOut } = useAuth();
     let { path, url } = useRouteMatch();
-    // function for user img 
+    // function for user img  ok
     let loginPhoto = () => {
         if (user.photoURL === null) {
             return pro1;
