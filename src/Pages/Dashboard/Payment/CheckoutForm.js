@@ -1,12 +1,16 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 import spin from '../../../images/9.gif'
+import swal from 'sweetalert';
+
 
 const CheckoutForm = ({ totalprice, fullOrder }) => {
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
+    const history = useHistory();
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const [processing, setProcessing] = useState(false)
@@ -87,28 +91,35 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 ...fullOrder,
                 created: paymentIntent.created,
                 last4: paymentMethod.card.last4,
-                transaction: paymentIntent.client_secret.slice('_secret')[0]
+                transaction: paymentIntent.client_secret.slice('_secret')
             }
             console.log(payFullOrder);
 
-            // fetch(' https://time-zone-78.herokuapp.com/orders', {
-            //     method: "POST",
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(payFullOrder)
-            // })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         if (data.insertedId) {
-            //             alert("success")
-            //              history.push('/shop')
-            //         }
-            //     })
+            fetch(' https://time-zone-78.herokuapp.com/orders', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(payFullOrder)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        swal("Successfully Placed the order !", "", "success");
 
 
-
+                    }
+                })
+            // add to cart delete 
+            if (payFullOrder.addToCartId) {
+                fetch(`http://localhost:5000/addToCart/${payFullOrder.addToCartId}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => { });
+            }
         }
+
     }
     return (
         <div>

@@ -17,29 +17,36 @@ const AddToCart = () => {
             .then(data => setCarts(data))
     }, [])
 
+
+
+
+
+
     return (
-        <div className="py-12">
+        <div className="py-16 min-h-screen">
             <div className="container full-width-all mx-auto ">
-                <div className="px-2">
-                    <div>cart - {carts.length}</div>
-                    <h1>add to cart</h1>
-                </div>
                 {
-                    carts.length ?
-                        <div className="grid grid-cols-2 gap-5 px-2">
-
-                            {
-                                carts.map(cart => <SingleAddToCart key={cart._id} cart={cart}></SingleAddToCart>)
-                            }
-
-                        </div>
+                    carts.length === 0 ? <div> <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You Have no any Cart Products !</h1></div>
                         :
-                        <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+                        <div>
+                            {
+                                carts.length ?
+                                    <div className="grid grid-cols-2 gap-5 px-2">
+
+                                        {
+                                            carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
+                                        }
+
+                                    </div>
+                                    :
+                                    <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+                            }
+                        </div>
                 }
 
 
             </div>
-        </div>
+        </div >
     );
 };
 

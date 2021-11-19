@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import './Product.css'
+import swal from 'sweetalert';
+
 
 const Product = (props) => {
-    const { _id, InStock, name, model, rating, price, img } = props.product;
+    const { _id, InStock, productName, model, rating, price, img } = props.product;
     const [quentity, setQuentity] = useState(0);
     const { user } = useAuth();
 
@@ -14,14 +16,14 @@ const Product = (props) => {
             productId: _id,
             email: user.email,
             img: img,
-            productName: name,
+            productName: productName,
             price: price,
             quantity: 1,
             payment: false,
             status: false,
 
         }
-        fetch(' https://time-zone-78.herokuapp.com/addToCart', {
+        fetch(' http://localhost:5000/addToCart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +33,14 @@ const Product = (props) => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert("success")
+
+                    swal("Products added to cart!", " ", "success");
+                } else {
+                    swal({
+                        text: "Already Exist on add to cart!",
+                        button: "Add Another!",
+                    });
+
 
                 }
             })
@@ -54,11 +63,18 @@ const Product = (props) => {
                 <hr className="mt-2" />
                 <div className="mt-2 flex justify-between">
                     <div>
-                        <h1 className="text-indigo-900 font-semibold text-2xl">{name}</h1>
+                        <h1 className="text-indigo-900 font-semibold text-2xl">{productName}</h1>
                         <p className="text-gray-400  text-sm">Brand : {model}</p>
                     </div>
                     <div>
-                        <button onClick={addToCart}> <i class="fas fa-cart-plus text-pink-800 hover:text-indigo-900 text-2xl font-bold"></i></button>
+                        {
+                            InStock ?
+                                <button onClick={addToCart}> <i class="fas fa-cart-plus text-pink-800 hover:text-indigo-900 text-2xl font-bold">
+
+                                </i></button>
+                                :
+                                <button onClick={addToCart}> <i class="fas fa-cart-plus text-gray-800  text-2xl font-bold cursor-not-allowed"></i></button>
+                        }
                     </div>
                 </div>
                 <div className="py-3">

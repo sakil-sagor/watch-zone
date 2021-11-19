@@ -27,7 +27,7 @@ const ProfileShortcut = () => {
 
 
             <div>
-                <NavLink to="/payment" className="text-indigo-900 font-semibold hover:text-indigo-700 block text-white mt-3">Payment</NavLink>
+                <NavLink to="/addToCart" className="text-indigo-900 font-semibold hover:text-indigo-700 block text-white mt-3">My Cart</NavLink>
             </div>
             <div>
                 <NavLink to="/myOrders" className="text-indigo-900 font-semibold hover:text-indigo-700  block text-white mt-3">My Orders</NavLink>

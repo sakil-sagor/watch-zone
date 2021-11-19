@@ -7,7 +7,7 @@ import OrderPayment from '../OrderPayment/OrderPayment';
 
 const OrderNow = ({ product, orders }) => {
     const { user } = useAuth();
-    const { _id, img, productName, price } = product;
+    const { _id, img, productId, productName, price } = product;
 
 
 
@@ -33,6 +33,7 @@ const OrderNow = ({ product, orders }) => {
         quantity: quantity,
         totalPrice: unitPrice,
         status: false,
+        addToCartId: _id,
 
     }
 
@@ -66,7 +67,7 @@ const OrderNow = ({ product, orders }) => {
                                 <div className="flex items-center">
                                     <img className="w-24" src={img} alt="" />
                                     <div className="text-indigo-900 font-semibold">
-                                        <p >Id : {_id}</p>
+
                                         <p>Name : {productName}</p>
                                     </div>
                                 </div>

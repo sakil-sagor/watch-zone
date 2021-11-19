@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import spin from '../../../images/9.gif'
+import swal from 'sweetalert';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
@@ -25,7 +26,7 @@ const MyOrders = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('Successfully delete the data.')
+                        swal("Successfully Placed the order !", "", "success");
                         const remainingData = orders.filter(user => user._id !== id)
                         setOrders(remainingData)
                     }
@@ -36,13 +37,10 @@ const MyOrders = () => {
     return (
         <div className="py-16">
             <div className="full-width-all container m-auto px-2">
-                <div>
+                <div className="min-h-screen">
                     {
-                        orders.length === 0 ?
-                            <div>
-                                <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You have No Orders Yet!</h1>
-                            </div>
-                            :
+                        orders.length !== 0 ?
+
                             <div>
                                 <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">My All Orders</h1>
                                 <div>
@@ -94,6 +92,11 @@ const MyOrders = () => {
                                     }
                                 </div>
                             </div>
+                            :
+                            <div>
+                                <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You have No Orders Yet!</h1>
+                            </div>
+
                     }
                 </div>
 

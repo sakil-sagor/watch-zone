@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react"
+import useAuth from "./useAuth";
 
 
 const useAddToCart = () => {
 
-    const [cart, setCart] = useState([])
+    const [carts, setCarts] = useState([]);
 
-    useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/addToCart')
+    const { user } = useAuth();
+
+    useEffect(() => {
+        const url = `https://time-zone-78.herokuapp.com/addToCart?email=${user.email}`
+        fetch(url)
             .then(res => res.json())
-            .then(data => setCart(data))
-    ], [])
-    return [cart, setCart]
+            .then(data => setCarts(data))
+    }, [])
+    return [carts, setCarts]
 
 
 

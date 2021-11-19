@@ -20,9 +20,7 @@ const ProductDetails = () => {
     const handelfield = e => {
         const field = e.target.name;
         const value = e.target.value;
-        console.log(value);
         if (value > 0) {
-            console.log(value);
             const fieldData = { ...orders }
             fieldData[field] = value;
             setOrders(fieldData)
@@ -52,7 +50,7 @@ const ProductDetails = () => {
                                 <div className="p-8 border text-lg md:col-span-7">
                                     {/* <form onSubmit={handelOrder}> */}
 
-                                    <h1 className="text-2xl font-semibold uppercase text-indigo-900 mb-2">{product?.name}</h1>
+                                    <h1 className="text-2xl font-semibold uppercase text-indigo-900 mb-2">{product?.productName}</h1>
                                     <p className="text-gray-500 text-sm">Brand : {product?.model}</p>
                                     <br />
                                     <p className="text-indigo-900 font-semibold">Rating {product?.rating} <i class="fas fa-star text-yellow-500"></i> </p>

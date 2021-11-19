@@ -58,7 +58,7 @@ const AddProduct = () => {
                     <div className="m-auto md:w-8/12 px-2">
                         <form onSubmit={handelRegister} className="register-form mt-6">
                             <div>
-                                <input required className="py-2 px-4 w-full text-lg  rounded-md " name="name" type="text" onBlur={handelfield} ref={getName} placeholder="Product Name" />
+                                <input required className="py-2 px-4 w-full text-lg  rounded-md " name="productName" type="text" onBlur={handelfield} ref={getName} placeholder="Product Name" />
                             </div> <br />
                             <div>
                                 <input required className="py-2 px-4 w-full text-lg  rounded-md " name="model" type="text" onBlur={handelfield} ref={getModel} placeholder="Product model" />

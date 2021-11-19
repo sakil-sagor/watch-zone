@@ -5,14 +5,16 @@ import OrderNow from '../OrderNow/OrderNow';
 const AddToCartOrder = () => {
     const [cartsOrder, setCartsOrder] = useState({})
 
+
     const { addToCartId } = useParams();
+    console.log(addToCartId);
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/addToCart/${addToCartId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCartsOrder(data))
     }, []);
-
+    console.log(cartsOrder);
     const quantity = {
         ...cartsOrder
     };

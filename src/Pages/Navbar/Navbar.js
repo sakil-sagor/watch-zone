@@ -6,6 +6,7 @@ import useAuth from "../../Hooks/useAuth";
 import ProfileShortcut from "../Login/ProfileShortcut/ProfileShortcut";
 import pro1 from '../../images/pro1.png'
 import './Navbar.css'
+import useAddToCart from "../../Hooks/useAddToCart";
 
 // navbar area for all 
 

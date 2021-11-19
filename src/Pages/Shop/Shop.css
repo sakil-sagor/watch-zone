@@ -4,3 +4,11 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .cart-input:focus-visible{
+    outline: none;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+     opacity: 1;
+    
+  }
