@@ -86,7 +86,7 @@ const useFirebase = () => {
     }, [user.email])
 
     const saveUser = (displayName, email, method) => {
-        const user = { name: displayName, email: email }
+        const user = { name: displayName, email: email, role: '' }
         fetch('https://time-zone-78.herokuapp.com/users', {
             method: method,
             headers: {

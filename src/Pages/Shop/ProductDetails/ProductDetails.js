@@ -6,6 +6,7 @@ import ProductTab from './ProductTab/ProductTab';
 
 const ProductDetails = () => {
     const [product, setProduct] = useState({})
+    const [orderProduct, setOrderProduct] = useState({})
     const { productId } = useParams();
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/products/${productId}`
@@ -33,10 +34,9 @@ const ProductDetails = () => {
     }
 
 
+
+
     const [orederNow, setOrderNow] = useState(false)
-
-
-
 
     return (
         <div className="py-24 " >

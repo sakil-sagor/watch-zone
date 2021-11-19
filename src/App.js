@@ -26,6 +26,8 @@ import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import DirectOrder from './Pages/Shop/DirectOrder/DirectOrder';
 import ViewProfile from './Pages/Dashboard/ViewProfile/ViewProfile';
+import AddToCart from './Pages/Shop/AddToCart/AddToCart';
+import AddToCartOrder from './Pages/Shop/AddToCartOrder/AddToCartOrder';
 
 function App() {
   return (
@@ -44,11 +46,17 @@ function App() {
             <Route exact path="/shop">
               <Shop></Shop>
             </Route>
+            <PrivateRoute exact path="/addToCart">
+              <AddToCart></AddToCart>
+            </PrivateRoute>
             <PrivateRoute exact path="/shop/:productId">
               <ProductDetails></ProductDetails>
             </PrivateRoute>
-            <PrivateRoute exact path="/bookNow/:productId">
+            <PrivateRoute exact path="/directOrder/:productId">
               <DirectOrder></DirectOrder>
+            </PrivateRoute>
+            <PrivateRoute exact path="/addToCartOrder/:addToCartId">
+              <AddToCartOrder></AddToCartOrder>
             </PrivateRoute>
             <PrivateRoute exact path="/orderNow">
               <OrderNow></OrderNow>
@@ -84,6 +92,9 @@ function App() {
               <ManageOrders></ManageOrders>
             </PrivateRoute>
             <PrivateRoute exact path="/payment">
+              <Payment></Payment>
+            </PrivateRoute>
+            <PrivateRoute exact path="/orderNow/:paymentId">
               <Payment></Payment>
             </PrivateRoute>
             <PrivateRoute exact path="/myReview">

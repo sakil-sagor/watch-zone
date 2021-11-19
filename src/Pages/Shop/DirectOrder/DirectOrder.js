@@ -19,11 +19,9 @@ const DirectOrder = () => {
 
     return (
         <div className="py-24">
-
             <div className="container full-width-all mx-auto px-2">
-                <OrderNow key={product._id} product={product} orders={orders}></OrderNow>
+                <OrderNow key={product._id} product={product} orders={orders} ></OrderNow>
             </div>
-
         </div>
     );
 };

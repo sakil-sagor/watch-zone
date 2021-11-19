@@ -53,7 +53,6 @@ const Register = () => {
                 ></PageTitle>
             </div>
             {/* register main body  */}
-
             <div className="container m-auto py-32 grid grid-cols-12 gap-4 items-center	full-width-all px-4">
                 <div className="col-span-3"></div>
                 <div className="col-span-12 sm:col-span-8 md:col-span-6">
@@ -87,7 +86,6 @@ const Register = () => {
                         <button onClick={handelGoogleLogin} className="mr-2 text-base block font-bold text-white px-4 py-2  bg-indigo-900 hover:bg-indigo-800 radiou rounded-sm ">Google Login</button>
                     </div>
                 </div>
-
                 <div className="col-span-3">
                     <img className="w-full" src="" alt="" />
                 </div>

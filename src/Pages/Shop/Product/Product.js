@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import './Product.css'
 
 const Product = (props) => {
     const { _id, InStock, name, model, rating, price, img } = props.product;
+    const [quentity, setQuentity] = useState(0);
+    const { user } = useAuth();
+
+
+    const addToCart = e => {
+        const product = {
+            productId: _id,
+            email: user.email,
+            img: img,
+            productName: name,
+            price: price,
+            quantity: 1,
+            payment: false,
+            status: false,
+
+        }
+        fetch(' http://localhost:5000/addToCart', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert("success")
+
+                }
+            })
+    }
 
     return (
         <div className=" ">
@@ -20,9 +52,14 @@ const Product = (props) => {
 
                 </div>
                 <hr className="mt-2" />
-                <div className="mt-2">
-                    <h1 className="text-indigo-900 font-semibold text-2xl">{name}</h1>
-                    <p className="text-gray-400  text-sm">Brand : {model}</p>
+                <div className="mt-2 flex justify-between">
+                    <div>
+                        <h1 className="text-indigo-900 font-semibold text-2xl">{name}</h1>
+                        <p className="text-gray-400  text-sm">Brand : {model}</p>
+                    </div>
+                    <div>
+                        <button onClick={addToCart}> <i class="fas fa-cart-plus text-pink-800 hover:text-indigo-900 text-2xl font-bold"></i></button>
+                    </div>
                 </div>
                 <div className="py-3">
                     <div className="flex justify-between">
@@ -40,7 +77,7 @@ const Product = (props) => {
                         <NavLink className="transition duration-500 border border-indigo-900 text-indigo-900 bg-white hover:bg-indigo-900 hover:text-white px-3 py-2 rounded font-semibold  d-button " to={`shop/${_id}`}> Details</NavLink>
                         {
                             InStock ?
-                                <NavLink className="transition duration-500 bg-indigo-900 text-white px-3 py-2 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to={`bookNow/${_id}`}>Order Now</NavLink>
+                                <NavLink className="transition duration-500 bg-indigo-900 text-white px-3 py-2 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to={`directOrder/${_id}`}>Order Now</NavLink>
                                 :
                                 <button disabled className="transition  cursor-not-allowed duration-500 bg-gray-500 text-white px-3 py-2 rounded font-semibold   d-button-solid border " >Order Now</button>
                         }

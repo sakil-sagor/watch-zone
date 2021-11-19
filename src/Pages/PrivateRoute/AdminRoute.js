@@ -10,12 +10,12 @@ const AdminRoute = ({ children, ...rest }) => {
         return '';
 
     }
-
+    console.log(admin);
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                user.email || admin ? (
+                user.email && admin ? (
                     children
                 ) : (
                     <Redirect

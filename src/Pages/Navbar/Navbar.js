@@ -10,7 +10,7 @@ import './Navbar.css'
 // navbar area for all 
 
 const Navbar = ({ fixed }) => {
-    const { user, logOut, handelLogout } = useAuth();
+    const { user } = useAuth();
     const [menuOpen, setMenuOpen] = React.useState(false);
     const barsIcon = <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
     const [profileState, setProfileState] = useState('Off');
@@ -65,15 +65,18 @@ const Navbar = ({ fixed }) => {
                                         <div className='nav-item'>
                                             <NavLink className="manu-item p-2  font-semibold text-white" to="/shop">Shop</NavLink >
                                         </div>
-
                                         <div className='nav-item'>
+                                            <NavLink className="manu-item p-2  font-semibold text-white" to="/addToCart">  <i class="fas fa-cart-plus text-white  text-2xl font-bold"></i></NavLink >
+                                        </div>
+
+                                        {/* <div className='nav-item'>
                                             <NavLink className="manu-item p-2  font-semibold text-white" to="/contactUs"> Contact Us  </NavLink >
                                         </div>
                                         <div className='nav-item'>
                                             <NavLink className="manu-item p-2  font-semibold text-white mr-2" to="/aboutUs"> About Us  </NavLink >
-                                        </div>
+                                        </div> */}
                                         {/* user img login log-out */}
-                                        <div className="profile-holder py-3">
+                                        <div className="profile-holder py-3 ml-4">
                                             {
                                                 user.email || user.displayName ?
                                                     <img style={{ cursor: 'pointer' }} onClick={toggleText} className="w-12 rounded-full" src={loginPhoto()} alt="" />
