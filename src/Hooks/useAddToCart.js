@@ -6,7 +6,7 @@ const useAddToCart = () => {
     const [cart, setCart] = useState([])
 
     useEffect(() => [
-        fetch('http://localhost:5000/addToCart')
+        fetch('https://time-zone-78.herokuapp.com/addToCart')
             .then(res => res.json())
             .then(data => setCart(data))
     ], [])

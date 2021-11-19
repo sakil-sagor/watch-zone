@@ -17,7 +17,7 @@ const OrderPayment = ({ totalprice, fullOrder }) => {
     // const { paymentId } = useParams();
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/addToCart/${paymentId}`)
+    //     fetch(`https://time-zone-78.herokuapp.com/addToCart/${paymentId}`)
     //         .then(res => res.json())
     //         .then(data => setOrderId(data))
     // }, [])

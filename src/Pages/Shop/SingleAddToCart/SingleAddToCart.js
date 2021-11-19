@@ -11,7 +11,7 @@ const SingleAddToCart = (props) => {
 
     const handelUpdatefield = id => {
         const fullAddToCart = { quantity: totalquantity }
-        const url = `http://localhost:5000/addToCart/${id}`;
+        const url = `https://time-zone-78.herokuapp.com/addToCart/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {

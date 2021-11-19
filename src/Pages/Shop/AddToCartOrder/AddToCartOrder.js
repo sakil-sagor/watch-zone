@@ -7,7 +7,7 @@ const AddToCartOrder = () => {
 
     const { addToCartId } = useParams();
     useEffect(() => {
-        const url = `http://localhost:5000/addToCart/${addToCartId}`
+        const url = `https://time-zone-78.herokuapp.com/addToCart/${addToCartId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCartsOrder(data))

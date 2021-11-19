@@ -21,7 +21,7 @@ const Product = (props) => {
             status: false,
 
         }
-        fetch(' http://localhost:5000/addToCart', {
+        fetch(' https://time-zone-78.herokuapp.com/addToCart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
