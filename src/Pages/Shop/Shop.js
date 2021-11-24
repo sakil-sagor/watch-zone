@@ -15,7 +15,7 @@ const Shop = () => {
 
                 </div>
             </div>
-            <div className="full-width-all container m-auto py-16 min-h-screen	">
+            <div className="full-width-all container m-auto py-6 min-h-screen	">
                 <div>
                     <Products></Products>
                 </div>

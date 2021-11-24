@@ -18,34 +18,78 @@ const AddToCart = () => {
     }, [])
 
 
-
-
-
-
     return (
         <div className="py-16 min-h-screen">
+
+
             <div className="container full-width-all mx-auto ">
-                {
-                    carts.length === 0 ? <div> <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You Have no any Cart Products !</h1></div>
-                        :
-                        <div>
-                            {
-                                carts.length ?
-                                    <div className="grid grid-cols-2 gap-5 px-2">
-
-                                        {
-                                            carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
-                                        }
-
-                                    </div>
-                                    :
-                                    <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
-                            }
+                {/* {
+                    !carts.length &&
+                    <div> <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You Have no any Cart Products !</h1>
+                        <div className="mt-24">
+                            <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">Want to make some Shop...   </h1>
+                            <p className="text-center"><NavLink className="transition duration-500 bg-indigo-900 text-white px-10 py-3 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to='/shop'>Shop Now</NavLink></p>
                         </div>
+                    </div>
+
+                } */}
+
+                { <div>
+                    {
+                        carts.length ?
+                            <div>
+                                <div className="grid grid-cols-2 gap-5 px-2">
+
+                                    {
+                                        carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
+                                    }
+                                </div>
+                            </div>
+
+                            :
+                            <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+                    }
+                </div>
+
                 }
 
-
             </div>
+
+
+
+            {/*    <div className="container full-width-all mx-auto ">
+                <div>
+                    {
+                        carts.length ?
+                            <div>
+                                {
+                                    carts.length === 0 ? <div> <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You Have no any Cart Products !</h1>
+                                        <div className="mt-24">
+                                            <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">Want to make some Shop...   </h1>
+                                            <p className="text-center"><NavLink className="transition duration-500 bg-indigo-900 text-white px-10 py-3 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to='/shop'>Shop Now</NavLink></p>
+                                        </div>
+                                    </div>
+                                        :
+
+                                        <div className="grid grid-cols-2 gap-5 px-2">
+
+                                            {
+                                                carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
+                                            }
+
+                                        </div>
+                                }
+                            </div>
+
+                            :
+                            <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+                    }
+                </div>
+
+
+
+            </div> */}
+
         </div >
     );
 };

@@ -112,7 +112,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 })
             // add to cart delete 
             if (payFullOrder.addToCartId) {
-                fetch(`http://localhost:5000/addToCart/${payFullOrder.addToCartId}`, {
+                fetch(`https://time-zone-78.herokuapp.com/addToCart/${payFullOrder.addToCartId}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

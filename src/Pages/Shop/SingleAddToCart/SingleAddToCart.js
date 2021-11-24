@@ -31,7 +31,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
     const handelCancel = (id) => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
-            fetch(`http://localhost:5000/addToCart/${id}`, {
+            fetch(`https://time-zone-78.herokuapp.com/addToCart/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
@@ -65,11 +65,10 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
 
                     </div>
                 </div>
+
+                <hr className="my-3" />
                 <div className="text-indigo-900 font-semibold">
-                </div>
-                <hr className="my-6" />
-                <div className="text-indigo-900 font-semibold">
-                    <p className="text-right">Total : $ {totalquantity * price}</p>
+                    <p className="text-right mb-3">Total : $ {totalquantity * price}</p>
                 </div>
                 <div className="flex justify-between items-center">
                     <button onClick={() => handelCancel(_id)}><i class="far fa-trash-alt hover:text-red-800 border px-4 py-2 text-xl hover:border-red-800 cursor-pointer transition duration-500 rounded"></i></button>

@@ -49,9 +49,9 @@ function App() {
             <PrivateRoute exact path="/addToCart">
               <AddToCart></AddToCart>
             </PrivateRoute>
-            <PrivateRoute exact path="/shop/:productId">
+            <Route exact path="/shop/:productId">
               <ProductDetails></ProductDetails>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute exact path="/directOrder/:productId">
               <DirectOrder></DirectOrder>
             </PrivateRoute>

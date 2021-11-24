@@ -23,27 +23,32 @@ const Product = (props) => {
             status: false,
 
         }
-        fetch(' http://localhost:5000/addToCart', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(product)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-
-                    swal("Products added to cart!", " ", "success");
-                } else {
-                    swal({
-                        text: "Already Exist on add to cart!",
-                        button: "Add Another!",
-                    });
-
-
-                }
+        if (user.email) {
+            fetch(' https://time-zone-78.herokuapp.com/addToCart', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(product)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+
+                        swal("Products added to cart!", " ", "success");
+                    } else {
+                        swal({
+                            text: "Already Exist on add to cart!",
+                            button: "Add Another!",
+                        });
+
+
+                    }
+                })
+        } else {
+            swal("Oops!", "You are not loged in, Please Log in fast!", "");
+        }
+
     }
 
     return (
@@ -73,7 +78,7 @@ const Product = (props) => {
 
                                 </i></button>
                                 :
-                                <button onClick={addToCart}> <i class="fas fa-cart-plus text-gray-800  text-2xl font-bold cursor-not-allowed"></i></button>
+                                <button > <i class="fas fa-cart-plus text-gray-800  text-2xl font-bold cursor-not-allowed"></i></button>
                         }
                     </div>
                 </div>

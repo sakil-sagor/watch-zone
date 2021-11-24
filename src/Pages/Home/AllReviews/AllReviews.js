@@ -48,7 +48,7 @@ const AllReviews = () => {
                     <Swiper slidesPerView={3} spaceBetween={30} centeredSlides={true} autoplay={{
                         "delay": 3000,
                         "disableOnInteraction": false
-                    }} navigation={true}
+                    }}
                         breakpoints={{
                             320: {
                                 "slidesPerView": 1,
