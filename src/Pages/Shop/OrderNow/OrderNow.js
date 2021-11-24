@@ -61,6 +61,10 @@ const OrderNow = ({ product, orders }) => {
                                 <input required className="py-2 px-4 w-full text-lg  border-2 border-black   rounded-md" name="address" type="text" step="0.01" onBlur={handelfield} placeholder="Your Address" />
                             </div>
                             <br />
+                            <div>
+                                <OrderPayment fullOrder={fullOrder} totalprice={unitPrice}></OrderPayment>
+                            </div>
+
                         </div>
                         <div className="px-2 md:px-4 py-6 border-2 text-lg">
                             <div className="lg:flex justify-between items-center">
@@ -83,9 +87,9 @@ const OrderNow = ({ product, orders }) => {
                             <div className="text-indigo-900 font-semibold">
                                 <p className="text-right">Total : $ {unitPrice}</p>
                             </div>
-                            <div>
+                            {/* <div>
                                 <OrderPayment fullOrder={fullOrder} totalprice={unitPrice}></OrderPayment>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <br />

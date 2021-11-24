@@ -1,13 +1,19 @@
+import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
+import Login from '../../Login/Login';
+import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import OrderNow from '../OrderNow/OrderNow';
 import ProductTab from './ProductTab/ProductTab';
 
 const ProductDetails = () => {
+    const { user } = useAuth();
     const [product, setProduct] = useState({})
     const [orderProduct, setOrderProduct] = useState({})
     const { productId } = useParams();
+    const history = useHistory();
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/products/${productId}`
         fetch(url)
@@ -99,10 +105,14 @@ const ProductDetails = () => {
                     }
 
                 </div>
-                {
-                    orederNow && <OrderNow key={product._id} product={product} setOrderNow={setOrderNow} orders={orders}></OrderNow>
-                }
-
+                <div>
+                    {
+                        orederNow &&
+                        <PrivateRoute>
+                            <OrderNow key={product._id} product={product} setOrderNow={setOrderNow} orders={orders}></OrderNow>
+                        </PrivateRoute>
+                    }
+                </div>
             </div>
         </div>
     );
@@ -110,12 +120,3 @@ const ProductDetails = () => {
 
 export default ProductDetails;
 
-
-
-
-// <h1 className=" font-bold text-indigo-900">$ {product?.Gender}</h1>
-// <h1 className=" font-bold text-indigo-900">$ {product?.color}</h1>
-// <h1 className="font-bold text-indigo-900">$ {product?.DisplayType}</h1>
-// <h1 className=" font-bold text-indigo-900">$ {product?.CaseMetal}</h1>
-// <h1 className=" font-bold text-indigo-900">$ {product?.WaterResistance}</h1>
-// <h1 className=" font-bold text-indigo-900">$ {product?.price}</h1>

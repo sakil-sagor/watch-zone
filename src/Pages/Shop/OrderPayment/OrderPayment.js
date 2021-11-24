@@ -23,12 +23,8 @@ const OrderPayment = ({ totalprice, fullOrder }) => {
     // }, [])
 
     return (
-        <div className="full-width-all container m-auto md:py-12 lg:py-32">
-            <div className="pt-24 pb-24 text-green-700 text-center">
-                <div>
-
-
-                </div>
+        <div className="full-width-all container m-auto md:py-12 ">
+            <div className=" text-green-700 text-center">
                 <div>
                     {
                         totalprice &&

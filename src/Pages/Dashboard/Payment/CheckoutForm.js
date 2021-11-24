@@ -123,11 +123,12 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <CardElement
+            <form className="" onSubmit={handleSubmit}>
+                <CardElement className="pb-12" required
                     options={{
                         style: {
                             base: {
+                                paddingBottom: '50px',
                                 fontSize: '16px',
                                 color: '#424770',
                                 '::placeholder': {
