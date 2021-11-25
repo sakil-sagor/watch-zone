@@ -8,7 +8,7 @@ const Products = () => {
     const [searchResult, setSearchResult] = useState([])
     const getName = useRef('');
     useEffect(() => {
-        const url = `http://localhost:5000/products?search=${searchInput}`
+        const url = `https://time-zone-78.herokuapp.com/products?search=${searchInput}`
         fetch(url)
             .then(res => res.json())
             .then(data => setSearchResult(data))
