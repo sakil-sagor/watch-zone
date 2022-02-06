@@ -44,8 +44,8 @@ const AllReviews = () => {
                         ></SectionTitle>
                     </div>
                 </div>
-                <div>
-                    <Swiper slidesPerView={3} spaceBetween={30} centeredSlides={true} autoplay={{
+                <div className="slider-all-review">
+                    <Swiper slidesPerView={3} spaceBetween={30} autoplay={{
                         "delay": 3000,
                         "disableOnInteraction": false
                     }}

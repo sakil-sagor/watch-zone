@@ -20,7 +20,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                         to={{
                             pathname: "/login",
                             state: { from: location }
-                        }}
+                        }}  
                     />
                 )
             }

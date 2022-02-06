@@ -31,7 +31,7 @@ const SingleReview = (props) => {
 
                     </div>
                 </div>
-                <div className="bg-gray-200 p-4 rounded-lg mt-4">
+                <div className="bg-gray-200 p-4 rounded-lg mt-4" style={{ height: "200px" }}>
                     <p><i class="fas fa-quote-left text-2xl"></i></p>
                     <p className="text-gray-500">
                         {feedback.slice(0, 150)}
