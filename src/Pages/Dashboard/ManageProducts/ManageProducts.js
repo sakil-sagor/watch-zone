@@ -15,17 +15,17 @@ const ManageProducts = () => {
     ], [update])
 
     // stock out function 
-    let handelAccept = (id) => {
+    let handelStockOut = (id) => {
         const proceed = window.confirm("Are you sure, You want to Stock Out this Product?")
         if (proceed) {
-
-            const url = `https://time-zone-78.herokuapp.com/products/${id}`;
+            const stock = { InStock: false }
+            const url = `http://localhost:5000/products/${id}`;
             fetch(url, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify()
+                body: JSON.stringify(stock)
             })
                 .then(res => res.json())
                 .then(data => {
@@ -38,31 +38,33 @@ const ManageProducts = () => {
                 })
         }
     };
-    /*
-        // stock in fucntion 
-        let handelStockIn = (id) => {
-            const proceed = window.confirm("Are you sure, You want to Stock Out this Product?")
-            if (proceed) {
-                const url = `http://localhost:5000/products/${id}`;
-                fetch(url, {
-                    method: "PUT",
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify()
+
+    // stock in fucntion 
+    let handelStockIn = (id) => {
+        const proceed = window.confirm("Are you sure, You want to Stock Out this Product?")
+        if (proceed) {
+            const stock = { InStock: true }
+            const url = `http://localhost:5000/products/${id}`;
+            console.log(url, stock);
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(stock)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount > 0) {
+                        alert('Update Successful.')
+                        // const remainingData = orders.map(user => user)
+                        setUpdate(update + 1)
+
+                    }
                 })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.modifiedCount > 0) {
-                            alert('Update Successful.')
-                            // const remainingData = orders.map(user => user)
-                            setUpdate(update + 1)
-    
-                        }
-                    })
-            }
         }
-    */
+    }
+
     // order delete system 
     const handelCancel = (id) => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
@@ -133,8 +135,9 @@ const ManageProducts = () => {
                                                     <div className="flex pt-4 justify-between text-white">
                                                         <button className="bg-indigo-900 hover:bg-indigo-800 text-sm px-3 py-2 rounded-lg" onClick={() => handelCancel(product?._id)}>Delete</button>
                                                         {
-                                                            product?.InStock && <button className="bg-indigo-900 hover:bg-indigo-800 text-sm px-2 py-1 rounded-lg" onClick={() => handelAccept(product._id)}>Out of Stock</button>
-
+                                                            product?.InStock ? <button className="bg-indigo-900 hover:bg-indigo-800 text-sm px-2 py-1 rounded-lg" onClick={() => handelStockOut(product._id)}>Out of Stock</button>
+                                                                :
+                                                                <button className="bg-indigo-900 hover:bg-indigo-800 text-sm px-2 py-1 rounded-lg" onClick={() => handelStockIn(product._id)}>Stock In</button>
                                                         }
                                                         {/* <button className="bg-indigo-900 hover:bg-indigo-800 text-sm px-3 py-2 rounded-lg">Update</button> */}
 

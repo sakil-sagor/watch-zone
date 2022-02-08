@@ -12,8 +12,6 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
-
-
     // order delete system 
     const handelCancel = (id) => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
@@ -33,7 +31,6 @@ const MyOrders = () => {
                 });
         }
     }
-
     return (
         <div className="py-16">
             <div className="full-width-all container m-auto px-2">
