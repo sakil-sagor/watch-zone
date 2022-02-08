@@ -17,6 +17,7 @@ const AddProduct = () => {
         setProductData(fieldData)
     }
 
+    const getCategory = useRef('');
     const getDisplayType = useRef('');
     const getCaseTyoe = useRef('');
     const getGender = useRef('');
@@ -43,7 +44,7 @@ const AddProduct = () => {
 
                 if (data.insertedId) {
                     alert("success")
-                    getDisplayType.current.value = getCaseTyoe.current.value = getGender.current.value = getDes.current.value = getName.current.value = getModel.current.value = getPrice.current.value = getRating.current.value = getColor.current.value = getImg.current.value = '';
+                    getDisplayType.current.value = getCategory.current.value = getCaseTyoe.current.value = getGender.current.value = getDes.current.value = getName.current.value = getModel.current.value = getPrice.current.value = getRating.current.value = getColor.current.value = getImg.current.value = '';
                 }
             })
 
@@ -57,6 +58,16 @@ const AddProduct = () => {
                     <h2 className="text-center text-3xl"> Add a new Product </h2>
                     <div className="m-auto md:w-8/12 px-2">
                         <form onSubmit={handelRegister} className="register-form mt-6">
+                            <div>
+                                <select required className="py-2 px-4 w-full text-lg  rounded-md " name="Category" onBlur={handelfield} ref={getCategory}>
+                                    <option className='' value="" disabled selected>Select Product Category </option>
+                                    <option> mobile</option>
+                                    <option> leptop</option>
+                                    <option> watch</option>
+
+                                </select>
+                            </div>
+                            <br />
                             <div>
                                 <input required className="py-2 px-4 w-full text-lg  rounded-md " name="productName" type="text" onBlur={handelfield} ref={getName} placeholder="Product Name" />
                             </div> <br />
@@ -99,7 +110,8 @@ const AddProduct = () => {
                                     <option value="" disabled selected>Product Case Metal</option>
                                     <option> STAINLESS STEEL</option>
                                     <option> Leather</option>
-
+                                    <option> Glass Body</option>
+                                    <option> Plastic Body</option>
                                 </select>
                             </div>
                             <br />

@@ -62,13 +62,13 @@ const Product = (props) => {
                             <p className="text-2xl text-center ">Stock Out</p>
                         </div>
                     }
-                    <img className="rounded  w-full imgage" src={img} alt="" />
+                    <img className="rounded  w-full imgage" style={{ height: "260px", width: "250px" }} src={img} alt="" />
 
                 </div>
                 <hr className="mt-2" />
                 <div className="mt-2 flex justify-between">
                     <div>
-                        <h1 className="text-indigo-900 font-semibold text-2xl">{productName}</h1>
+                        <h1 className="text-indigo-900 font-semibold text-xl">{productName}</h1>
                         <p className="text-gray-400  text-sm">Brand : {model}</p>
                     </div>
                     <div>

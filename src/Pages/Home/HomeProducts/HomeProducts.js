@@ -7,8 +7,10 @@ import Product from '../../Shop/Product/Product';
 
 const HomeProducts = () => {
     const [products] = useProducts([]);
-    const highNumber = products.length - 8;
+
+    const highNumber = products?.length - 8;
     let numStart = Math.floor(Math.random() * highNumber) + 1
+
     return (
         <div className="py-24 our-doctors-container">
             <div className="container m-auto full-width-all ">
@@ -26,7 +28,7 @@ const HomeProducts = () => {
                         products.length ?
                             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 px-2 ">
                                 {
-                                    products.slice(0, 8).map(product => <Product key={product._id} product={product}> </Product>)
+                                    products.slice(numStart, numStart + 8).map(product => <Product key={product._id} product={product}> </Product>)
                                 }
                             </div>
                             :

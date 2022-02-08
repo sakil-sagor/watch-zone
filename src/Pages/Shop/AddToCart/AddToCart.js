@@ -23,36 +23,42 @@ const AddToCart = () => {
 
 
             <div className="container full-width-all mx-auto ">
-                {/* {
-                    !carts.length &&
-                    <div> <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You Have no any Cart Products !</h1>
-                        <div className="mt-24">
-                            <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">Want to make some Shop...   </h1>
-                            <p className="text-center"><NavLink className="transition duration-500 bg-indigo-900 text-white px-10 py-3 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to='/shop'>Shop Now</NavLink></p>
-                        </div>
-                    </div>
-
-                } */}
-
-                { <div>
+                <div>
+                    <h1 className="text-left text-2xl text-indigo-900 font-semibold mb-12">You Can Place Order from your Cart Products!</h1>
+                </div>
+                <hr />
+                <div className='pt-12'>
                     {
-                        carts.length ?
-                            <div>
-                                <div className="grid grid-cols-2 gap-5 px-2">
-
-                                    {
-                                        carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
-                                    }
-                                </div>
+                        !carts.length &&
+                        <div>
+                            <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">Oops! You Have no any Cart Products.</h1>
+                            <div className="mt-24">
+                                <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">Want to make some Shop...?   </h1>
+                                <p className="text-center"><NavLink className="transition duration-500 bg-indigo-900 text-white px-10 py-3 rounded font-semibold hover:text-indigo-900 hover:bg-white  d-button-solid border hover:border-indigo-900" to='/shop'>Shop Now</NavLink></p>
                             </div>
+                        </div>
 
-                            :
-                            <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+                    }
+
+                    {
+                        <div>
+                            {
+                                carts.length &&
+                                <div>
+                                    <div className="grid grid-cols-2 gap-5 px-2">
+
+                                        {
+                                            carts.map(cart => <SingleAddToCart key={cart._id} cart={cart} carts={carts} setCarts={setCarts} ></SingleAddToCart>)
+                                        }
+                                    </div>
+                                </div>
+
+
+                            }
+                        </div>
+
                     }
                 </div>
-
-                }
-
             </div>
 
 

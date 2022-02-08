@@ -37,12 +37,17 @@ const MyOrders = () => {
     return (
         <div className="py-16">
             <div className="full-width-all container m-auto px-2">
-                <div className="min-h-screen">
+                <div>
+                    <h1 className="text-left text-2xl text-indigo-900 font-semibold mb-12">My All Orders</h1>
+                </div>
+                <hr />
+                <div className="min-h-screen pt-12">
+
                     {
                         orders.length !== 0 ?
 
-                            <div>
-                                <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">My All Orders</h1>
+                            <div >
+
                                 <div>
                                     {
                                         orders.length ?

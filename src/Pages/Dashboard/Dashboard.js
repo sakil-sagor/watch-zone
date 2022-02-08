@@ -28,7 +28,7 @@ const Dashboard = () => {
         }
     }
     return (
-        <div className="py-12 px-2 container  mx-auto md:min-h-screen">
+        <div className="py-12 px-2   mx-auto md:min-h-screen">
             <div className="grid grid-cols-1  lg:grid-cols-12 gap-8 ">
                 <div className="lg:col-span-3 xl:col-span-2 shadow-2xl text-center py-8 text-lg  text-indigo-900 font-semibold rounded-xl px-2 border">
                     <div className="mb-6">

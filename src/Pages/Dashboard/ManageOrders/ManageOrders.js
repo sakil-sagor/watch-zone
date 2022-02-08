@@ -62,18 +62,20 @@ const ManageOrders = () => {
 
     return (
         <div className="py-16 px-2">
-            <div className="full-width-all container m-auto ">
+            <div className=" ">
                 <h1 className="text-center text-2xl text-indigo-900 font-semibold mb-12">You can Delete,Edit or Approve users all orders from here</h1>
                 {
                     orders.length ?
                         <div>
                             {
                                 orders.length ?
-                                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                    <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                                         {
                                             orders.map(order =>
                                                 <div key={order._id}>
-                                                    <div className="shadow-2xl bg-indigo-200 p-4 text-sm rounded-lg">
+
+
+                                                    <div className={order.status ? "shadow-2xl bg-indigo-200 p-4 text-sm rounded-lg" : "shadow-2xl bg-red-200 p-4 text-sm rounded-lg"}>
                                                         <div className="flex justify-between">
                                                             <div>
                                                                 <p className="font-semibold text-base"> {order?.productName}</p>
@@ -82,9 +84,7 @@ const ManageOrders = () => {
                                                             <div className="flex justify-between items-center">
 
                                                                 {
-                                                                    order.status ? <button className="bg-green-800 py-2 px-4 rounded-lg text-white ">Approved</button>
-                                                                        :
-                                                                        <button className="bg-pink-500 py-2 px-4 rounded-lg text-white ">Pending</button>
+                                                                    !order.status && <button className="bg-pink-500 py-2 px-4 rounded-lg text-white ">Pending</button>
                                                                 }
                                                             </div>
                                                         </div>
@@ -108,12 +108,14 @@ const ManageOrders = () => {
 
                                                         <div className="flex justify-between mt-2 items-center">
                                                             {
-                                                                !order.status && <button className="bg-green-800 py-2 px-4 rounded-lg text-white " onClick={() => handelAccept(order._id)}>Accept </button>
+                                                                !order.status && <button className="bg-green-800 py-2 px-4 rounded-lg text-white hover:bg-green-600 " onClick={() => handelAccept(order._id)}>Approve </button>
                                                             }
 
-                                                            <button className={!order.status ? "bg-red-800 py-2 px-4 rounded-lg text-white " : "bg-red-800 py-2 px-4 rounded-lg text-white  w-full"} onClick={() => handelCancel(order._id)}>Delete Order</button>
+                                                            <button className={!order.status ? "bg-red-800 py-2 px-4 rounded-lg text-white hover:bg-red-600" : "bg-red-800 hover:bg-red-600 py-2 px-4 rounded-lg text-white  w-full"} onClick={() => handelCancel(order._id)}>Delete Order</button>
                                                         </div>
                                                     </div>
+
+
                                                 </div>
                                             )
                                         }
