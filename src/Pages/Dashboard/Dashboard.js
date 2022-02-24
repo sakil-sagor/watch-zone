@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import React from 'react';
 import pro1 from '../../images/pro1.png'
 import {
@@ -6,7 +5,6 @@ import {
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../Hooks/useAuth';

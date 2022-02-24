@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import useProducts from '../../../Hooks/useProducts';
 import spin from '../../../images/9.gif'
 
 const ManageProducts = () => {

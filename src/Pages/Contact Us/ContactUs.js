@@ -3,8 +3,6 @@ import PageTitle from '../Shared/PageTitle';
 import { NavLink } from 'react-router-dom';
 import imgd2 from '../../images/4.jpg'
 import './ContacsUs.css'
-import BookingShortcut from '../Shared/BookingShortcut/BookingShortcut';
-import Slider from '../Shared/Slider/Slider';
 
 const ContactUs = () => {
     return (

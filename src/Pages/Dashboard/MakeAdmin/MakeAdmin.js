@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../Hooks/useAuth';
 
 const MakeAdmin = () => {
-    const { user } = useAuth();
     const [admin, setAdmin] = useState('')
     const [allAdmin, setAllAdmin] = useState([])
     const [success, setSuccess] = useState(0)

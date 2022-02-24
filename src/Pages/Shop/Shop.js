@@ -6,7 +6,7 @@ import './Shop.css'
 const Shop = () => {
     return (
         <div>
-            <div className="shop-page-banner">
+            {/* <div className="shop-page-banner">
                 <div className="full-width-all container m-auto text-white">
                     <PageTitle
                         title="Choose your best one"
@@ -14,7 +14,7 @@ const Shop = () => {
                     ></PageTitle>
 
                 </div>
-            </div>
+            </div> */}
             <div className="full-width-all container m-auto py-6 min-h-screen	">
                 <div>
                     <Products></Products>
