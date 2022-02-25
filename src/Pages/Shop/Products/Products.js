@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import spin from '../../../images/9.gif'
 
 const Products = () => {
     const [searchInput, setSearchInput] = useState('')
@@ -43,27 +44,33 @@ const Products = () => {
                 }
             </div>
             <hr />
-            <div className="pt-6">
-                {
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 px-2 ">
+            {searchResult ?
+                <div>
+                    <div className="pt-6">
                         {
-                            searchResult.map(product => <Product key={product._id} product={product}></Product>)
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 px-2 ">
+                                {
+                                    searchResult.map(product => <Product key={product._id} product={product}></Product>)
+                                }
+                            </div>
+
                         }
                     </div>
+                    <div className="pagination mt-12 text-center">
+                        {
+                            [...Array(pageCount).keys()].map(number =>
+                                <button className={number === page ? "px-2 mx-2 border-2 rounded text-white bg-indigo-900 border-indigo-900" : " px-2 mx-2 border-2 rounded bg-gray-100 border-indigo-900"}
+                                    key={number}
+                                    onClick={() => setPage(number)}
+                                >{number + 1} </button>)
+                        }
 
-                }
-            </div>
-            <div className="pagination mt-12 text-center">
-                {
-                    [...Array(pageCount).keys()].map(number =>
-                        <button className={number === page ? "px-2 mx-2 border-2 rounded text-white bg-indigo-900 border-indigo-900" : " px-2 mx-2 border-2 rounded bg-gray-100 border-indigo-900"}
-                            key={number}
-                            onClick={() => setPage(number)}
-                        >{number + 1} </button>)
-                }
-
-            </div>
+                    </div>
+                </div>
+                :
+                <div ><img className="m-auto w-20 mt-24 block" src={spin} alt="" /></div>
+            }
         </div>
     );
 };

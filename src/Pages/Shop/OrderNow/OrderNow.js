@@ -4,12 +4,11 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Payment from '../../Dashboard/Payment/Payment';
 import OrderPayment from '../OrderPayment/OrderPayment';
+import method from '../../../images/method.jpg'
 
 const OrderNow = ({ product, orders }) => {
     const { user } = useAuth();
     const { _id, img, productId, productName, price } = product;
-
-
 
     const { quantity } = orders;
     const initailInfo = { userName: user.displayName, email: user.email }
@@ -61,6 +60,9 @@ const OrderNow = ({ product, orders }) => {
                                 <input required className="py-2 px-4 w-full text-lg  border-2 border-black   rounded-md" name="address" type="text" step="0.01" onBlur={handelfield} placeholder="Your Address" />
                             </div>
                             <br />
+                            <div >
+                                <img className='m-auto block' src={method} alt="" />
+                            </div>
                             <div>
                                 <OrderPayment fullOrder={fullOrder} totalprice={unitPrice}></OrderPayment>
                             </div>
@@ -87,16 +89,9 @@ const OrderNow = ({ product, orders }) => {
                             <div className="text-indigo-900 font-semibold">
                                 <p className="text-right">Total : $ {unitPrice}</p>
                             </div>
-                            {/* <div>
-                                <OrderPayment fullOrder={fullOrder} totalprice={unitPrice}></OrderPayment>
-                            </div> */}
                         </div>
                     </div>
                     <br />
-                    {/* <NavLink to={`/orderNow/${_id}`}>
-                        <button className="transition w-3/4 mx-auto block  duration-500 bg-indigo-900 text-white px-12 py-2 rounded font-semibold hover:text-indigo-900 hover:bg-white   d-button-solid border-2 hover:border-indigo-900" type="submit"> Place Order</button>
-                    </NavLink> */}
-                    {/* </form> */}
                 </div>
             }
         </div>

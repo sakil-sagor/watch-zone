@@ -38,7 +38,6 @@ const ManageOrders = () => {
 
     // order delete system 
     const handelCancel = (id) => {
-        console.log(id);
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
@@ -114,8 +113,6 @@ const ManageOrders = () => {
                                                             <button className={!order.status ? "bg-red-800 py-2 px-4 rounded-lg text-white hover:bg-red-600" : "bg-red-800 hover:bg-red-600 py-2 px-4 rounded-lg text-white  w-full"} onClick={() => handelCancel(order._id)}>Delete Order</button>
                                                         </div>
                                                     </div>
-
-
                                                 </div>
                                             )
                                         }
@@ -130,8 +127,6 @@ const ManageOrders = () => {
 
                         </div>
                 }
-
-
             </div>
         </div >
     );

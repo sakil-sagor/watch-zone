@@ -1,19 +1,12 @@
-import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router';
-import { NavLink } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
-import Login from '../../Login/Login';
+import { useParams } from 'react-router';
 import PrivateRoute from '../../PrivateRoute/PrivateRoute';
 import OrderNow from '../OrderNow/OrderNow';
 import ProductTab from './ProductTab/ProductTab';
 
 const ProductDetails = () => {
-    const { user } = useAuth();
     const [product, setProduct] = useState({})
-    const [orderProduct, setOrderProduct] = useState({})
     const { productId } = useParams();
-    const history = useHistory();
     useEffect(() => {
         const url = `https://time-zone-78.herokuapp.com/products/${productId}`
         fetch(url)
@@ -36,10 +29,6 @@ const ProductDetails = () => {
         }
 
     }
-
-
-
-
     const [orederNow, setOrderNow] = useState(false)
 
     return (
@@ -105,6 +94,7 @@ const ProductDetails = () => {
                     }
 
                 </div>
+
                 <div>
                     {
                         orederNow &&

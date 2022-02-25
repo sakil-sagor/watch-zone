@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 import spin from '../../../images/9.gif'
 import swal from 'sweetalert';
+import './CheckoutFrom.css'
 
 
 const CheckoutForm = ({ totalprice, fullOrder }) => {
@@ -106,8 +107,6 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 .then(data => {
                     if (data.insertedId) {
                         swal("Successfully Placed the order !", "", "success");
-
-
                     }
                 })
             // add to cart delete 
@@ -119,7 +118,6 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                     .then(data => { });
             }
         }
-
     }
     return (
         <div>
@@ -128,7 +126,6 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                     options={{
                         style: {
                             base: {
-                                paddingBottom: '50px',
                                 fontSize: '16px',
                                 color: '#424770',
                                 '::placeholder': {

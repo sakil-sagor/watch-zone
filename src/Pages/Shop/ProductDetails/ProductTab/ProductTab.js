@@ -5,7 +5,7 @@ import './ProductTab.css'
 
 
 const ProductTab = (props) => {
-    const { model, Gender, CaseMetal, DisplayType, WaterResistance, description, Warranty } = props.product;
+    const { CaseMetal, DisplayType, WaterResistance, description, Warranty } = props.product;
     const [toggleState, setToggleState] = useState(1);
     const toogleTab = (index) => {
         setToggleState(index);
