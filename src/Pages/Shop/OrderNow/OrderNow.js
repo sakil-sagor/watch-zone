@@ -74,7 +74,7 @@ const OrderNow = ({ product, orders }) => {
                                     <img className="w-24" src={img} alt="" />
                                     <div className="text-indigo-900 font-semibold">
 
-                                        <p>Name : {productName}</p>
+                                        <p> {productName}</p>
                                     </div>
                                 </div>
                                 <div className="text-indigo-900 font-semibold text-right">

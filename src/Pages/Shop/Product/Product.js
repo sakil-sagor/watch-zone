@@ -54,7 +54,7 @@ const Product = (props) => {
     return (
         <div className=" ">
             <div className="shadow-xl bg-white rounded hover:shadow-2xl border p-2">
-                <div className="px cart">
+                <div className="px cart" style={{ height: "260px", width: "260px" }}>
 
                     {
                         !InStock &&
@@ -62,7 +62,7 @@ const Product = (props) => {
                             <p className="text-2xl text-center ">Stock Out</p>
                         </div>
                     }
-                    <img className="rounded  w-full imgage" style={{ height: "260px", width: "250px" }} src={img} alt="" />
+                    <img className="rounded " style={{ height: "100%", width: "100%" }} src={img} alt="" />
 
                 </div>
                 <hr className="mt-2" />

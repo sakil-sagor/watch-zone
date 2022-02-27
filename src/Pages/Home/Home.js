@@ -1,16 +1,16 @@
 import React from 'react';
 import AllReviews from './AllReviews/AllReviews';
-import Banner from './Banner/Banner';
 import BannerSlider from './BannerSlider/BannerSlider';
 import Featured from './Featured/Featured';
+import Header from './Header/Header';
 import HomeProducts from './HomeProducts/HomeProducts';
 import ProductCategory from './ProductCategory/ProductCategory';
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
-
+            <Header></Header>
+            <hr />
             <BannerSlider></BannerSlider>
             <hr />
             <HomeProducts></HomeProducts>
