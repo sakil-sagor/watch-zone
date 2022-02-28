@@ -6,7 +6,6 @@ import useAuth from "../../Hooks/useAuth";
 import ProfileShortcut from "../Login/ProfileShortcut/ProfileShortcut";
 import pro1 from '../../images/pro1.png'
 import './Navbar.css'
-import useAddToCart from "../../Hooks/useAddToCart";
 
 // navbar area for all 
 
@@ -31,7 +30,7 @@ const Navbar = ({ fixed }) => {
 
     return (
         <>
-            <div className="  bg-gradient-to-b from-indigo-900  to-indigo-900">
+            <div className="  bg-gradient-to-b from-indigo-900  to-indigo-900 navbar-main">
                 <div className='flex flex-wrap py-2 transition-all delay-1000 full-width-all m-auto container'>
                     <div className='w-full'>
                         <nav className='relative flex flex-wrap items-center justify-between rounded'>
@@ -69,14 +68,6 @@ const Navbar = ({ fixed }) => {
                                         <div className='nav-item'>
                                             <NavLink className="manu-item p-2  font-semibold text-white" to="/addToCart">  <i class="fas fa-cart-plus text-white  text-2xl font-bold"></i></NavLink >
                                         </div>
-
-                                        {/* <div className='nav-item'>
-                                            <NavLink className="manu-item p-2  font-semibold text-white" to="/contactUs"> Contact Us  </NavLink >
-                                        </div>
-                                        <div className='nav-item'>
-                                            <NavLink className="manu-item p-2  font-semibold text-white mr-2" to="/aboutUs"> About Us  </NavLink >
-                                        </div> */}
-                                        {/* user img login log-out */}
                                         <div className="profile-holder py-3 ml-4">
                                             {
                                                 user.email || user.displayName ?

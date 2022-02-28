@@ -1,3 +1,9 @@
+.navbar-main{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
 .profile-holder{
   position: relative;
 }
