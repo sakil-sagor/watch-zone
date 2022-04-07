@@ -40,7 +40,7 @@ const Navbar = ({ fixed }) => {
                                         className='leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-600 text-3xl md:text-5xl font-extrabold'
                                         to='/'
                                     >
-                                        <span className='text-white'>  Time-Zone.</span>
+                                        <span className='text-white'>  Fashion-Zone.</span>
                                     </Link>
                                     <button
                                         className='primary-color cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none'

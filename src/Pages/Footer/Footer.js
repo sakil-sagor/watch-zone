@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* left section  */}
                 <div className="col-sapn- ">
                     <NavLink to="/home">
-                        <h1 className="text-4xl font-bold text-white ">Time- <span className="text-blue-300">Zone</span> </h1>
+                        <h1 className="text-4xl font-bold text-white ">Fashion- <span className="text-blue-300">Zone</span> </h1>
                     </NavLink>
                     <p className="py-8 text-white font-semibold">Our goal is to deliver quality of care in a courteous, respectful, and compassionate manner. We hope you will allow us to care for you and strive to be the first and best choice for your family.</p>
                     <NavLink className="text-blue-300 font-semibold text-lg uppercase hover:text-white" to="/shop">Shopping Now <i class="fas fa-arrow-right ml-1"></i></NavLink>

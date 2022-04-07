@@ -107,7 +107,10 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 .then(data => {
                     if (data.insertedId) {
                         swal("Successfully Placed the order !", "", "success");
+
                     }
+                    history.push('/myOrders')
+
                 })
             // add to cart delete 
             if (payFullOrder.addToCartId) {
@@ -117,6 +120,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                     .then(res => res.json())
                     .then(data => { });
             }
+
         }
     }
     return (
@@ -150,7 +154,9 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 error && <p className="text-red-800 font-semibold">{error}!</p>
             }
             {
-                success && <p className="text-green-600 font-semibold">{success}!</p>
+                success && <div>
+                    <p className="text-green-600 font-semibold">{success}!</p>
+                </div>
             }
         </div>
     );

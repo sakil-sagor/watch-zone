@@ -21,7 +21,7 @@ const AboutUs = () => {
                 <div className=" ">
                     {/* About page section  */}
                     <div className="py-16 shadow-xl  bg-white mb-24 p-4 rounded-lg">
-                        <h1 className="text-4xl font-semibold text-indigo-900 ">  Time Zone Watch Company LTD.</h1>
+                        <h1 className="text-4xl font-semibold text-indigo-900 ">  Fashion Zone Watch Company LTD.</h1>
                         <p className="text-gray-600 mt-8">We provide international  products &  many other services. We cater to a wide range of needs including Leisure & Business travel. Having a wide network around the world we provide holiday packages to 100+ destinations.
                             <br />
                             <br />

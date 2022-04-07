@@ -54,7 +54,7 @@ const Product = (props) => {
     return (
         <div className=" ">
             <div className="shadow-xl bg-white rounded hover:shadow-2xl border p-2">
-                <div className="px cart" style={{ height: "260px", width: "260px" }}>
+                <div className="px cart product-img" >
 
                     {
                         !InStock &&
