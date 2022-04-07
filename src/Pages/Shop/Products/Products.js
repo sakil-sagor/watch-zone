@@ -30,7 +30,7 @@ const Products = () => {
     return (
         <div>
             <div className="text-center pb-2">
-                <input type="text" className="py-2 px-3 text-lg border-black border lg:w-1/2  mx-auto  my-6 rounded-full " placeholder="Serch your choice..." onChange={handelSearch} />
+                <input type="text" className="py-2 px-3 text-lg border-black border md:w-1/2  mx-auto  my-6 rounded-full " placeholder="Serch your choice..." onChange={handelSearch} />
 
             </div>
 
