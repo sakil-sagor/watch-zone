@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import spin from '../../../images/9.gif'
+import spin from '../../../images/9.gif';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -8,7 +8,7 @@ const ManageProducts = () => {
 
 
     useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/products')
+        fetch('https://fashion-zone-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data.products))
     ], [update])
@@ -18,7 +18,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to Stock Out this Product?")
         if (proceed) {
             const stock = { InStock: false }
-            const url = `https://time-zone-78.herokuapp.com/products/${id}`;
+            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -43,7 +43,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to Stock in this Product?")
         if (proceed) {
             const stock = { InStock: true }
-            const url = `https://time-zone-78.herokuapp.com/products/${id}`;
+            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
             console.log(url, stock);
             fetch(url, {
                 method: "PUT",
@@ -69,7 +69,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
-            const url = `https://time-zone-78.herokuapp.com/products/${id}`;
+            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
             console.log(url);
             fetch(url, {
                 method: "DELETE",

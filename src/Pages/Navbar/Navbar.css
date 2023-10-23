@@ -1,29 +1,34 @@
-.navbar-main{
+.navbar-main {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 99;
 }
-.profile-holder{
+
+.profile-holder {
   position: relative;
 }
-.proflie-item{
+
+.proflie-item {
   position: absolute;
   top: 70px;
   right: -100px;
   z-index: 99;
 }
-.active-profile-icon-area{
-    display: none;
+
+.active-profile-icon-area {
+  display: none;
 }
+
 @media only screen and (max-width: 1240px) {
-  .proflie-item{
-    right: 0px; 
-    }
-  } 
- @media only screen and (max-width: 1023px) {
-  .proflie-item{
-      top: 50px;  
-      right: -100px;
-    }
-  } 
+  .proflie-item {
+    right: 0px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .proflie-item {
+    top: 50px;
+    right: -100px;
+  }
+}

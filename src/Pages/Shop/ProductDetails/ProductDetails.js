@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const [product, setProduct] = useState({})
     const { productId } = useParams();
     useEffect(() => {
-        const url = `https://time-zone-78.herokuapp.com/products/${productId}`
+        const url = `https://fashion-zone-server.vercel.app/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))

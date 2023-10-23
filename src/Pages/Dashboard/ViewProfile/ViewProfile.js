@@ -1,6 +1,6 @@
 import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
-import pro1 from '../../../images/pro1.png'
+import pro1 from '../../../images/pro1.png';
 
 const ViewProfile = () => {
     const { user } = useAuth();

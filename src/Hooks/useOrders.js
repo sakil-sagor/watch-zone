@@ -6,7 +6,7 @@ const useOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/orders')
+        fetch('https://fashion-zone-server.vercel.app/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     ], [])

@@ -9,7 +9,7 @@ const AddToCartOrder = () => {
     const { addToCartId } = useParams();
     console.log(addToCartId);
     useEffect(() => {
-        const url = `https://time-zone-78.herokuapp.com/addToCart/${addToCartId}`
+        const url = `https://fashion-zone-server.vercel.app/addToCart/${addToCartId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCartsOrder(data))

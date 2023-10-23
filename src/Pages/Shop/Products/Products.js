@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import spin from '../../../images/9.gif';
 import Product from '../Product/Product';
-import spin from '../../../images/9.gif'
 
 const Products = () => {
     const [searchInput, setSearchInput] = useState('')
@@ -10,7 +10,7 @@ const Products = () => {
     const [totalResult, setTotalResult] = useState(0);
     const size = 12;
     useEffect(() => {
-        const url = ` https://time-zone-78.herokuapp.com/products?search=${searchInput}&&page=${page}&&size=${size}`
+        const url = ` https://fashion-zone-server.vercel.app/products?search=${searchInput}&&page=${page}&&size=${size}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

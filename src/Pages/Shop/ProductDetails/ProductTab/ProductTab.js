@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAuth from '../../../../Hooks/useAuth';
 import FaqTab from '../FaqTab/FaqTab';
-import './ProductTab.css'
+import './ProductTab.css';
 
 
 const ProductTab = (props) => {
@@ -23,7 +23,7 @@ const ProductTab = (props) => {
     }
     const handelReview = e => {
         const reviews = { ...review }
-        fetch(' https://time-zone-78.herokuapp.com/reviews', {
+        fetch(' https://fashion-zone-server.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

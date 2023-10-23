@@ -1,6 +1,6 @@
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import firebaseAuthentication from "../Firebase/Firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, updateProfile, sendPasswordResetEmail, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 
 firebaseAuthentication()
@@ -80,7 +80,7 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        fetch(`https://time-zone-78.herokuapp.com/users/${user.email}`)
+        fetch(`https://fashion-zone-server.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -88,7 +88,7 @@ const useFirebase = () => {
 
     const saveUser = (displayName, email, method) => {
         const user = { name: displayName, email: email, role: '' }
-        fetch('https://time-zone-78.herokuapp.com/users', {
+        fetch('https://fashion-zone-server.vercel.app/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

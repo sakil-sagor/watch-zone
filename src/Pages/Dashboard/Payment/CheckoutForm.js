@@ -1,10 +1,10 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import useAuth from '../../../Hooks/useAuth';
-import spin from '../../../images/9.gif'
 import swal from 'sweetalert';
-import './CheckoutFrom.css'
+import useAuth from '../../../Hooks/useAuth';
+import spin from '../../../images/9.gif';
+import './CheckoutFrom.css';
 
 
 const CheckoutForm = ({ totalprice, fullOrder }) => {
@@ -23,7 +23,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://time-zone-78.herokuapp.com/create-payment-intent", {
+        fetch("https://fashion-zone-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price }),
@@ -96,7 +96,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
             }
             console.log(payFullOrder);
 
-            fetch(' https://time-zone-78.herokuapp.com/orders', {
+            fetch(' https://fashion-zone-server.vercel.app/orders', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -114,7 +114,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 })
             // add to cart delete 
             if (payFullOrder.addToCartId) {
-                fetch(`https://time-zone-78.herokuapp.com/addToCart/${payFullOrder.addToCartId}`, {
+                fetch(`https://fashion-zone-server.vercel.app/addToCart/${payFullOrder.addToCartId}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

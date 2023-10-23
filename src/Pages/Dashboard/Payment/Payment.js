@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckoutForm from './CheckoutForm';
 import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import CheckoutForm from './CheckoutForm';
 
 
 
@@ -14,7 +13,7 @@ const Payment = () => {
     const { paymentId } = useParams();
 
     useEffect(() => {
-        fetch(`https://time-zone-78.herokuapp.com/addToCart/${paymentId}`)
+        fetch(`https://fashion-zone-server.vercel.app/addToCart/${paymentId}`)
             .then(res => res.json())
             .then(data => setOrderId(data))
     }, [])

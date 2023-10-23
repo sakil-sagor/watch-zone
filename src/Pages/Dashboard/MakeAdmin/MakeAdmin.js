@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     }
 
     useEffect(() => {
-        fetch(`https://time-zone-78.herokuapp.com/users`)
+        fetch(`https://fashion-zone-server.vercel.app/users`)
             .then(res => res.json())
             .then(data => setAllAdmin(data))
 
@@ -20,7 +20,7 @@ const MakeAdmin = () => {
     // make an admin 
     const handelMakeAdmin = e => {
         const user = { admin };
-        fetch('https://time-zone-78.herokuapp.com/users/admin', {
+        fetch('https://fashion-zone-server.vercel.app/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import useAuth from "./useAuth";
 
 
@@ -9,7 +9,7 @@ const useAddToCart = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `https://time-zone-78.herokuapp.com/addToCart?email=${user.email}`
+        const url = `https://fashion-zone-server.vercel.app/addToCart?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCarts(data))

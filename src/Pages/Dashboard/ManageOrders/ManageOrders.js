@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import spin from '../../../images/9.gif'
 import swal from 'sweetalert';
+import spin from '../../../images/9.gif';
 
 
 const ManageOrders = () => {
@@ -9,14 +9,14 @@ const ManageOrders = () => {
 
     // load all orders 
     useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/orders')
+        fetch('https://fashion-zone-server.vercel.app/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     ], [update])
 
     // update order status 
     let handelAccept = (id) => {
-        const url = `https://time-zone-78.herokuapp.com/orders/${id}`;
+        const url = `https://fashion-zone-server.vercel.app/orders/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -41,7 +41,7 @@ const ManageOrders = () => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
-            const url = `https://time-zone-78.herokuapp.com/orders/${id}`;
+            const url = `https://fashion-zone-server.vercel.app/orders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

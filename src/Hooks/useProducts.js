@@ -6,7 +6,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/products')
+        fetch('https://fashion-zone-server.vercel.app/products')
             .then(res => res.json())
             .then(data => setProducts(data.products))
     ], [])

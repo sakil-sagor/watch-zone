@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../Hooks/useAuth';
-import spin from '../../../images/9.gif'
 import swal from 'sweetalert';
+import useAuth from '../../../Hooks/useAuth';
+import spin from '../../../images/9.gif';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
     const { user } = useAuth();
     useEffect(() => {
-        const url = `https://time-zone-78.herokuapp.com/orders?email=${user.email}`
+        const url = `https://fashion-zone-server.vercel.app/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
@@ -17,7 +17,7 @@ const MyOrders = () => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
-            const url = `https://time-zone-78.herokuapp.com/orders/${id}`;
+            const url = `https://fashion-zone-server.vercel.app/orders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

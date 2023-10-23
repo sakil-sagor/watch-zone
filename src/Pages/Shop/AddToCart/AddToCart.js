@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import useAddToCart from '../../../Hooks/useAddToCart';
 import useAuth from '../../../Hooks/useAuth';
 import SingleAddToCart from '../SingleAddToCart/SingleAddToCart';
-import spin from '../../../images/9.gif'
 
 const AddToCart = () => {
     const [carts, setCarts] = useState([]);
@@ -11,7 +9,7 @@ const AddToCart = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `https://time-zone-78.herokuapp.com/addToCart?email=${user.email}`
+        const url = `https://fashion-zone-server.vercel.app/addToCart?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCarts(data))

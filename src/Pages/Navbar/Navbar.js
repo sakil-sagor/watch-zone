@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import pro1 from '../../images/pro1.png';
 import ProfileShortcut from "../Login/ProfileShortcut/ProfileShortcut";
-import pro1 from '../../images/pro1.png'
-import './Navbar.css'
+import './Navbar.css';
 
 // navbar area for all 
 
@@ -14,6 +14,7 @@ const Navbar = ({ fixed }) => {
     const [menuOpen, setMenuOpen] = React.useState(false);
     const barsIcon = <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
     const [profileState, setProfileState] = useState('Off');
+
 
     // function for user img 
     let loginPhoto = () => {

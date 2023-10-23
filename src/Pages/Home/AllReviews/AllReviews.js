@@ -8,15 +8,15 @@ import SingleReview from './SingleReview/SingleReview';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/components/navigation/navigation.min.css'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/scrollbar/scrollbar.min.css'
-import './AllReview.css'
+import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/scrollbar/scrollbar.min.css';
+import 'swiper/swiper-bundle.min.css';
+import './AllReview.css';
 
 // import Swiper core and required modules
 import SwiperCore, {
-    Autoplay, Pagination, Navigation
+    Autoplay, Navigation, Pagination
 } from 'swiper';
 
 // install Swiper modules
@@ -27,7 +27,7 @@ const AllReviews = () => {
     const [reviews, setReviews] = useState([])
     // load all orders 
     useEffect(() => [
-        fetch('https://time-zone-78.herokuapp.com/reviews')
+        fetch('https://fashion-zone-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     ], [])

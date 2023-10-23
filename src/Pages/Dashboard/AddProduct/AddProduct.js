@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const AddProduct = () => {
     const initialValu = {
@@ -32,7 +31,7 @@ const AddProduct = () => {
     const handelRegister = e => {
         const product = { ...productData }
 
-        fetch(' https://time-zone-78.herokuapp.com/products', {
+        fetch(' https://fashion-zone-server.vercel.app/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

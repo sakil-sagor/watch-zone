@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../Hooks/useAuth';
-import './Product.css'
 import swal from 'sweetalert';
+import useAuth from '../../../Hooks/useAuth';
+import './Product.css';
 
 
 const Product = (props) => {
@@ -24,7 +24,7 @@ const Product = (props) => {
 
         }
         if (user.email) {
-            fetch(' https://time-zone-78.herokuapp.com/addToCart', {
+            fetch(' https://fashion-zone-server.vercel.app/addToCart', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

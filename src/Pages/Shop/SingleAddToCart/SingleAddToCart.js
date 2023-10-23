@@ -13,7 +13,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
 
     const handelUpdatefield = id => {
         const fullAddToCart = { quantity: totalquantity }
-        const url = `https://time-zone-78.herokuapp.com/addToCart/${id}`;
+        const url = `https://fashion-zone-server.vercel.app/addToCart/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -31,7 +31,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
     const handelCancel = (id) => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
-            fetch(`https://time-zone-78.herokuapp.com/addToCart/${id}`, {
+            fetch(`https://fashion-zone-server.vercel.app/addToCart/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())
