@@ -6,8 +6,9 @@ import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
+    console.log(isLoading);
     if (isLoading) {
-        return '';
+        return 'Loading ...';
     }
     return (
         <Route
@@ -20,7 +21,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                         to={{
                             pathname: "/login",
                             state: { from: location }
-                        }}  
+                        }}
                     />
                 )
             }

@@ -23,7 +23,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://fashion-zone-server.vercel.app/create-payment-intent", {
+        fetch("https://fashion-zone.iitpark.com/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price }),
@@ -96,7 +96,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
             }
             console.log(payFullOrder);
 
-            fetch(' https://fashion-zone-server.vercel.app/orders', {
+            fetch(' https://fashion-zone.iitpark.com/orders', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -114,7 +114,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 })
             // add to cart delete 
             if (payFullOrder.addToCartId) {
-                fetch(`https://fashion-zone-server.vercel.app/addToCart/${payFullOrder.addToCartId}`, {
+                fetch(`https://fashion-zone.iitpark.com/addToCart/${payFullOrder.addToCartId}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

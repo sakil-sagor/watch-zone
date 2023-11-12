@@ -2,21 +2,23 @@ import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeaderSingle from './HeaderSingle';
 // Import Swiper styles
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/components/navigation/navigation.min.css'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/scrollbar/scrollbar.min.css'
+import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/scrollbar/scrollbar.min.css';
+import 'swiper/swiper-bundle.min.css';
 // import './BannerSlider.css'
 // all banner images 
-import h1 from '../../../images/h1.png'
-import h2 from '../../../images/h2.png'
-import h3 from '../../../images/h3.png'
-import h4 from '../../../images/h4.png'
-import h5 from '../../../images/h5.png'
+import h1 from '../../../images/h1.png';
+import h2 from '../../../images/h2.png';
+import h3 from '../../../images/h3.png';
+import h4 from '../../../images/h4.png';
+import h5 from '../../../images/h5.png';
 
 // import Swiper core and required modules
 import SwiperCore, {
-    Autoplay, Pagination, Navigation
+    Autoplay,
+    Navigation,
+    Pagination
 } from 'swiper';
 
 // install Swiper modules

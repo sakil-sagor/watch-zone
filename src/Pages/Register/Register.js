@@ -7,7 +7,7 @@ import PageTitle from '../Shared/PageTitle';
 
 const Register = () => {
     const { getEmail, setUser, saveUser, disName, getDisName, errorReg, setErrorReg, setIsLoading, getPassword, updateProfileName, googleLogin, ManualRegister } = useAuth();
-
+  
     const location = useLocation();
     const history = useHistory();
     const redirect_url = location.state?.from || '/home';

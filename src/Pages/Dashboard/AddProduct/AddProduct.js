@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const AddProduct = () => {
     const initialValu = {
@@ -7,6 +7,7 @@ const AddProduct = () => {
         Warranty: '1 Year Brand Warranty (For detail, please see warratny information page under help center)'
     }
     const [productData, setProductData] = useState(initialValu)
+    const [allCategory, setAllCategory] = useState([])
 
     const handelfield = e => {
         const field = e.target.name;
@@ -28,10 +29,19 @@ const AddProduct = () => {
     const getColor = useRef('');
     const getImg = useRef('');
 
+    // load all orders 
+    useEffect(() => [
+        fetch('http://localhost:5000/allBrands')
+            .then(res => res.json())
+            .then(data => setAllCategory(data))
+    ], [])
+    console.log(allCategory);
+
+
     const handelRegister = e => {
         const product = { ...productData }
 
-        fetch(' https://fashion-zone-server.vercel.app/products', {
+        fetch(' https://fashion-zone.iitpark.com/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -57,7 +67,16 @@ const AddProduct = () => {
                     <h2 className="text-center text-3xl"> Add a new Product </h2>
                     <div className="m-auto md:w-8/12 px-2">
                         <form onSubmit={handelRegister} className="register-form mt-6">
+
                             <div>
+                                <select required className="py-2 px-4 w-full text-lg  rounded-md " name="Category" onBlur={handelfield} ref={getCategory}>
+                                    <option className='' value="" disabled selected>Select Product Category </option>
+                                    {
+                                        allCategory.map((category, ind) => <option key={ind}>   {category?.brandName}</option>)
+                                    }
+                                </select>
+                            </div>
+                            {/* <div>
                                 <select required className="py-2 px-4 w-full text-lg  rounded-md " name="Category" onBlur={handelfield} ref={getCategory}>
                                     <option className='' value="" disabled selected>Select Product Category </option>
                                     <option> mobile</option>
@@ -65,7 +84,7 @@ const AddProduct = () => {
                                     <option> watch</option>
 
                                 </select>
-                            </div>
+                            </div> */}
                             <br />
                             <div>
                                 <input required className="py-2 px-4 w-full text-lg  rounded-md " name="productName" type="text" onBlur={handelfield} ref={getName} placeholder="Product Name" />

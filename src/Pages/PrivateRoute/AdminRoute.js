@@ -7,14 +7,20 @@ import useAuth from '../../Hooks/useAuth';
 const AdminRoute = ({ children, ...rest }) => {
     const { user, admin, isLoading } = useAuth();
     if (isLoading) {
-        return '';
+        return 'Loading for admin ...';
+
+    }
+    if (!admin) {
+        return 'Loading for admin ...';
 
     }
     console.log(admin);
+    console.log(isLoading);
     return (
         <Route
             {...rest}
             render={({ location }) =>
+
                 user.email && admin ? (
                     children
                 ) : (

@@ -51,11 +51,12 @@ const useFirebase = () => {
     }
 
     // get the current sign in user and toogle login register button 
-
     useEffect(() => {
+        setIsLoading(true)
         const unsubscribed = onAuthStateChanged(auth, (user) => {
+
             if (user) {
-                const uid = user.uid;
+                // const uid = user.uid;
                 setUser(user)
 
             } else {
@@ -80,15 +81,19 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        fetch(`https://fashion-zone-server.vercel.app/users/${user.email}`)
+        // setIsLoading(true)
+        fetch(`https://fashion-zone.iitpark.com/users/${user.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => {
+                setAdmin(data.admin)
+                // setIsLoading(false)
+            })
     }, [user.email])
 
 
     const saveUser = (displayName, email, method) => {
         const user = { name: displayName, email: email, role: '' }
-        fetch('https://fashion-zone-server.vercel.app/users', {
+        fetch('https://fashion-zone.iitpark.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

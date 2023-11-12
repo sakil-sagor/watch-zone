@@ -17,7 +17,7 @@ const MyReview = () => {
 
     const handelReview = e => {
         const reviews = { ...review }
-        fetch(' https://fashion-zone-server.vercel.app/reviews', {
+        fetch(' https://fashion-zone.iitpark.com/reviews', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

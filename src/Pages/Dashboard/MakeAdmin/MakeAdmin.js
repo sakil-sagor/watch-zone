@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     }
 
     useEffect(() => {
-        fetch(`https://fashion-zone-server.vercel.app/users`)
+        fetch(`https://fashion-zone.iitpark.com/users`)
             .then(res => res.json())
             .then(data => setAllAdmin(data))
 
@@ -20,7 +20,7 @@ const MakeAdmin = () => {
     // make an admin 
     const handelMakeAdmin = e => {
         const user = { admin };
-        fetch('https://fashion-zone-server.vercel.app/users/admin', {
+        fetch('https://fashion-zone.iitpark.com/users/admin', {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

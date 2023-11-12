@@ -9,14 +9,14 @@ const ManageOrders = () => {
 
     // load all orders 
     useEffect(() => [
-        fetch('https://fashion-zone-server.vercel.app/orders')
+        fetch('https://fashion-zone.iitpark.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     ], [update])
 
     // update order status 
     let handelAccept = (id) => {
-        const url = `https://fashion-zone-server.vercel.app/orders/${id}`;
+        const url = `https://fashion-zone.iitpark.com/orders/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -41,7 +41,7 @@ const ManageOrders = () => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
-            const url = `https://fashion-zone-server.vercel.app/orders/${id}`;
+            const url = `https://fashion-zone.iitpark.com/orders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

@@ -6,7 +6,7 @@ const useOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => [
-        fetch('https://fashion-zone-server.vercel.app/orders')
+        fetch('https://fashion-zone.iitpark.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     ], [])

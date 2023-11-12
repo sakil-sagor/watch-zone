@@ -13,7 +13,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
 
     const handelUpdatefield = id => {
         const fullAddToCart = { quantity: totalquantity }
-        const url = `https://fashion-zone-server.vercel.app/addToCart/${id}`;
+        const url = `https://fashion-zone.iitpark.com/addToCart/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -31,7 +31,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
     const handelCancel = (id) => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
-            fetch(`https://fashion-zone-server.vercel.app/addToCart/${id}`, {
+            fetch(`https://fashion-zone.iitpark.com/addToCart/${id}`, {
                 method: "DELETE",
             })
                 .then(res => res.json())

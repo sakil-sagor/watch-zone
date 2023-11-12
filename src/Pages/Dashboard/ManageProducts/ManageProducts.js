@@ -8,7 +8,7 @@ const ManageProducts = () => {
 
 
     useEffect(() => [
-        fetch('https://fashion-zone-server.vercel.app/products')
+        fetch('https://fashion-zone.iitpark.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.products))
     ], [update])
@@ -18,7 +18,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to Stock Out this Product?")
         if (proceed) {
             const stock = { InStock: false }
-            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
+            const url = `https://fashion-zone.iitpark.com/products/${id}`;
             fetch(url, {
                 method: "PUT",
                 headers: {
@@ -43,7 +43,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to Stock in this Product?")
         if (proceed) {
             const stock = { InStock: true }
-            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
+            const url = `https://fashion-zone.iitpark.com/products/${id}`;
             console.log(url, stock);
             fetch(url, {
                 method: "PUT",
@@ -69,7 +69,7 @@ const ManageProducts = () => {
         const proceed = window.confirm("Are you sure, You want to delete it?")
         if (proceed) {
 
-            const url = `https://fashion-zone-server.vercel.app/products/${id}`;
+            const url = `https://fashion-zone.iitpark.com/products/${id}`;
             console.log(url);
             fetch(url, {
                 method: "DELETE",

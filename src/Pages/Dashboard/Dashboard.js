@@ -1,19 +1,18 @@
 import React from 'react';
-import pro1 from '../../images/pro1.png'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
+    Switch,
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../Hooks/useAuth';
+import pro1 from '../../images/pro1.png';
 import AdminRoute from '../PrivateRoute/AdminRoute';
+import AddBrands from './AddProduct/AddBrands';
+import AddProduct from './AddProduct/AddProduct';
+import AdminDetails from './AdminDetails/AdminDetails';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import ManageOrders from './ManageOrders/ManageOrders';
 import ManageProducts from './ManageProducts/ManageProducts';
-import AdminDetails from './AdminDetails/AdminDetails';
-import AddProduct from './AddProduct/AddProduct';
 const Dashboard = () => {
     const { user, logOut } = useAuth();
     let { path, url } = useRouteMatch();
@@ -47,6 +46,9 @@ const Dashboard = () => {
                         <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/addProducts`}>Add Product</Link>
                     </div>
                     <div>
+                        <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/addBrands`}>Add Caegory</Link>
+                    </div>
+                    <div>
                         <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/makeAdmin`}>Make Admin </Link>
                     </div>
                     <div>
@@ -66,6 +68,9 @@ const Dashboard = () => {
                         </AdminRoute>
                         <AdminRoute path={`${path}/addProducts`}>
                             <AddProduct></AddProduct>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addBrands`}>
+                            <AddBrands></AddBrands>
                         </AdminRoute>
                         <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>

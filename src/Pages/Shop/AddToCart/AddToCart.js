@@ -9,7 +9,7 @@ const AddToCart = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `https://fashion-zone-server.vercel.app/addToCart?email=${user.email}`
+        const url = `https://fashion-zone.iitpark.com/addToCart?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setCarts(data))

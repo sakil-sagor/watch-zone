@@ -8,7 +8,7 @@ const ProductDetails = () => {
     const [product, setProduct] = useState({})
     const { productId } = useParams();
     useEffect(() => {
-        const url = `https://fashion-zone-server.vercel.app/products/${productId}`
+        const url = `https://fashion-zone.iitpark.com/products/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))

@@ -27,7 +27,7 @@ const AllReviews = () => {
     const [reviews, setReviews] = useState([])
     // load all orders 
     useEffect(() => [
-        fetch('https://fashion-zone-server.vercel.app/reviews')
+        fetch('https://fashion-zone.iitpark.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     ], [])

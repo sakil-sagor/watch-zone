@@ -10,7 +10,7 @@ const Products = () => {
     const [totalResult, setTotalResult] = useState(0);
     const size = 12;
     useEffect(() => {
-        const url = ` https://fashion-zone-server.vercel.app/products?search=${searchInput}&&page=${page}&&size=${size}`
+        const url = ` https://fashion-zone.iitpark.com/products?search=${searchInput}&&page=${page}&&size=${size}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

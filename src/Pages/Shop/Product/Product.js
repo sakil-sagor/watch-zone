@@ -24,7 +24,7 @@ const Product = (props) => {
 
         }
         if (user.email) {
-            fetch(' https://fashion-zone-server.vercel.app/addToCart', {
+            fetch(' https://fashion-zone.iitpark.com/addToCart', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

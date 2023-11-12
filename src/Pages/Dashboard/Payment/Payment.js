@@ -13,7 +13,7 @@ const Payment = () => {
     const { paymentId } = useParams();
 
     useEffect(() => {
-        fetch(`https://fashion-zone-server.vercel.app/addToCart/${paymentId}`)
+        fetch(`https://fashion-zone.iitpark.com/addToCart/${paymentId}`)
             .then(res => res.json())
             .then(data => setOrderId(data))
     }, [])
