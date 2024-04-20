@@ -8,12 +8,18 @@ const Products = () => {
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [totalResult, setTotalResult] = useState(0);
+    const [category, setCategory] = useState('')
+
     const size = 12;
     useEffect(() => {
-        const url = ` https://fashion-zone.iitpark.com/products?search=${searchInput}&&page=${page}&&size=${size}`
+
+        // fetch('/products?search=&page=0&size=10&sortDirection=asc&sortBy=productName&category=');
+
+        const url = `http://localhost:5000/products?search=${searchInput}&&page=${page}&&size=${size}&&sortDirection=asc&&sortBy=productName&&category='`
         fetch(url)
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 setSearchResult(data.products);
                 const count = data.count;
                 setTotalResult(count)

@@ -31,7 +31,7 @@ const Navbar = ({ fixed }) => {
 
     return (
         <>
-            <div className="  bg-gradient-to-b from-indigo-900  to-indigo-900 navbar-main">
+            <div className=" bg-white  navbar-main shadow-2xl ">
                 <div className='flex flex-wrap py-2 transition-all delay-1000 full-width-all m-auto container'>
                     <div className='w-full'>
                         <nav className='relative flex flex-wrap items-center justify-between rounded'>
@@ -41,7 +41,7 @@ const Navbar = ({ fixed }) => {
                                         className='leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-600 text-3xl md:text-5xl font-extrabold'
                                         to='/'
                                     >
-                                        <span className='text-white'>  Fashion-Zone.</span>
+                                        <span className=' text-blue-900'>  <span className="text-pink-500">NEW</span>-Collection.</span>
                                     </Link>
                                     <button
                                         className='primary-color cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none'
@@ -60,21 +60,21 @@ const Navbar = ({ fixed }) => {
                                 >
                                     <div className='flex flex-col lg:flex-row list-none lg:ml-auto items-center	'>
                                         <div className='nav-item'>
-                                            <NavLink className="manu-item p-2  font-semibold text-white " to="/home">Home</NavLink >
+                                            <NavLink className="manu-item p-2  font-semibold text-block " to="/home">Home</NavLink >
                                         </div>
 
                                         <div className='nav-item'>
-                                            <NavLink className="manu-item p-2  font-semibold text-white" to="/shop">Shop</NavLink >
+                                            <NavLink className="manu-item p-2  font-semibold text-block" to="/shop">Shop</NavLink >
                                         </div>
                                         <div className='nav-item'>
-                                            <NavLink className="manu-item p-2  font-semibold text-white" to="/addToCart">  <i class="fas fa-cart-plus text-white  text-2xl font-bold"></i></NavLink >
+                                            <NavLink className="manu-item p-2  font-semibold text-block" to="/addToCart">  <i class="fas fa-cart-plus text-block  text-2xl font-bold"></i></NavLink >
                                         </div>
                                         <div className="profile-holder py-3 ml-4">
                                             {
                                                 user.email || user.displayName ?
                                                     <img style={{ cursor: 'pointer' }} onClick={toggleText} className="w-12 rounded-full" src={loginPhoto()} alt="" />
                                                     :
-                                                    < NavLink className="manu-item p-2 text-lg font-bold text-indigo-900 bg-white hover:text-pink-800 text-white rounded-md" to="/login"> LogIn </NavLink >
+                                                    < NavLink className="manu-item p-2 text-lg font-bold text-indigo-900 bg-white hover:text-pink-800 text-block rounded-md" to="/login"> LogIn </NavLink >
                                             }
                                             <div className='nav-item my-4 lg:my-0 proflie-item'>
 

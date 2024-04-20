@@ -1,17 +1,17 @@
 .swiper {
-    width: 100%;
-    height: 100%;
-  }
+  width: 100%;
+  height: 100%;
+}
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-   
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
 }
-.slider-group-banner .swiper-slide img{
-  height: 250px;
-  width: 550px;
+
+.slider-group-banner .swiper-slide img {
+
   border-radius: 10px;
   display: unset;
 }

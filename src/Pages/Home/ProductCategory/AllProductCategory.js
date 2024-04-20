@@ -5,7 +5,7 @@ import Product from '../../Shop/Product/Product';
 const AllProductCategory = (props) => {
     const { Category } = props;
     const [products] = useProducts([]);
-    const singleCategory = products.filter(a => a.Category === Category)
+    const singleCategory = products.filter(a => a.Category.toLowerCase().includes("saree"))
     return (
         <div>
             <div>

@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState } from "react";
 
 const useOrders = () => {
+  const [orders, setOrders] = useState([]);
 
-    const [orders, setOrders] = useState([])
-
-    useEffect(() => [
-        fetch('https://fashion-zone.iitpark.com/orders')
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    ], [])
-    return [orders, setOrders]
-
-
-
-}
+  useEffect(
+    () => [
+      fetch("http://localhost:5000/orders")
+        .then((res) => res.json())
+        .then((data) => setOrders(data)),
+    ],
+    []
+  );
+  return [orders, setOrders];
+};
 export default useOrders;

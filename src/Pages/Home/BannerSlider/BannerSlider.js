@@ -1,23 +1,26 @@
 import React from 'react';
-import SingleBanner from './SingleBanner';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SectionTitle from '../../Shared/SectionTitle';
+import SingleBanner from './SingleBanner';
 // Import Swiper styles
-import 'swiper/swiper-bundle.min.css'
-import 'swiper/components/navigation/navigation.min.css'
-import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/scrollbar/scrollbar.min.css'
-import './BannerSlider.css'
+import 'swiper/components/navigation/navigation.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import 'swiper/components/scrollbar/scrollbar.min.css';
+import 'swiper/swiper-bundle.min.css';
+import './BannerSlider.css';
 // all banner images 
-import ban23 from '../../../images/23.jpg'
-import ban24 from '../../../images/24.jpg'
-import ban25 from '../../../images/25.jpg'
-import ban26 from '../../../images/26.jpg'
+import ban23 from '../../../images/23.jpg';
+import ban24 from '../../../images/24.jpg';
+import ban25 from '../../../images/25.jpg';
+import ban26 from '../../../images/26.jpg';
 
 // import Swiper core and required modules
 import SwiperCore, {
-    Autoplay, Pagination, Navigation
+    Autoplay,
+    Navigation,
+    Pagination
 } from 'swiper';
+import useProducts from '../../../Hooks/useProducts';
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
@@ -32,6 +35,8 @@ const banners = [
 
 
 const BannerSlider = () => {
+    const [products] = useProducts();
+
     return (
         <div>
             <div className="py-24">
@@ -47,23 +52,23 @@ const BannerSlider = () => {
                     </div>
 
                     <div className="slider-group-banner">
-                        <Swiper slidesPerView={2} spaceBetween={10} autoplay={{
+                        <Swiper slidesPerView={4} spaceBetween={10} navigation={true} autoplay={{
                             "delay": 3000,
                             "disableOnInteraction": false
                         }}
                             breakpoints={{
                                 320: {
-                                    "slidesPerView": 1,
+                                    "slidesPerView": 2,
                                     "spaceBetween": 10,
                                     "centeredSlides": true
                                 },
                                 768: {
-                                    "slidesPerView": 1,
+                                    "slidesPerView": 3,
                                     "spaceBetween": 0,
                                     "centeredSlides": true
                                 },
                                 1000: {
-                                    "slidesPerView": 2,
+                                    "slidesPerView": 4,
                                     "spaceBetween": 40,
 
                                 },
@@ -72,7 +77,7 @@ const BannerSlider = () => {
                             className="mySwiper ">
                             <div >
                                 {
-                                    banners.map(banner =>
+                                    products?.slice(0, 12).map(banner =>
                                         <SwiperSlide >
                                             <SingleBanner key={banner._id} banner={banner}></SingleBanner>
                                         </SwiperSlide>

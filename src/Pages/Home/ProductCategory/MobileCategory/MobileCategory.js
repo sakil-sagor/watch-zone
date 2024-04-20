@@ -5,7 +5,7 @@ const MobileCategory = () => {
     return (
         <div className='py-12 '>
             <div >
-                <AllProductCategory Category="mobile" ></AllProductCategory>
+                <AllProductCategory Category="lungi" ></AllProductCategory>
             </div>
         </div>
     );

@@ -5,7 +5,7 @@ const LeptopCategory = () => {
     return (
         <div className='py-12 '>
             <div >
-                <AllProductCategory Category="leptop" ></AllProductCategory>
+                <AllProductCategory Category="Saree" ></AllProductCategory>
             </div>
         </div>
     );
