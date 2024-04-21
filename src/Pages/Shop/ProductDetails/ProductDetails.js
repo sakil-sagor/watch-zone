@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const { productId } = useParams();
   useEffect(() => {
-    const url = `http://localhost:5000/products/${productId}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/products/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -45,8 +45,8 @@ const ProductDetails = () => {
                   <h1 className="text-2xl font-semibold uppercase text-indigo-900 mb-2">
                     {product?.productName}
                   </h1>
-                  <p className="text-gray-500 text-sm">
-                    Brand : {product?.model}
+                  <p className="text-gray-500 text-sm capitalize">
+                    Category : {product?.Category}
                   </p>
                   <br />
                   <p className="text-indigo-900 font-semibold">
@@ -54,9 +54,13 @@ const ProductDetails = () => {
                     <i class="fas fa-star text-yellow-500"></i>{" "}
                   </p>
                   <br />
-                  <h1 className="text-3xl font-bold text-indigo-900">
-                    $ {product?.price}
+                  <h1 className="text-xl font-semibold text-indigo-900">
+                    Tk {product?.price}
                   </h1>
+                  <br />
+
+                  <hr />
+
                   <br />
                   <h1 className=" ">
                     Gender :{" "}
@@ -83,10 +87,8 @@ const ProductDetails = () => {
                       {product?.InStock ? "Avaiable" : "Out of Stock"}
                     </span>
                   </h1>
-                  <br />
-                  <hr />
-                  <br />
-                  <p className="text-gray-500">{product?.description}</p>
+
+                  {/* <p className="text-gray-500">{product?.description}</p> */}
                   <br />
                   <hr />
                   <br />

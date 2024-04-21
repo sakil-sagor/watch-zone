@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import logo from '../../images/logo.png';
 import pro1 from '../../images/pro1.png';
 import ProfileShortcut from "../Login/ProfileShortcut/ProfileShortcut";
 import './Navbar.css';
@@ -32,7 +33,7 @@ const Navbar = ({ fixed }) => {
     return (
         <>
             <div className=" bg-white  navbar-main shadow-2xl ">
-                <div className='flex flex-wrap py-2 transition-all delay-1000 full-width-all m-auto container'>
+                <div className='flex flex-wrap transition-all delay-1000 full-width-all m-auto container'>
                     <div className='w-full'>
                         <nav className='relative flex flex-wrap items-center justify-between rounded'>
                             <div className='container mx-auto flex flex-wrap items-center justify-between'>
@@ -41,7 +42,8 @@ const Navbar = ({ fixed }) => {
                                         className='leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-gray-600 text-3xl md:text-5xl font-extrabold'
                                         to='/'
                                     >
-                                        <span className=' text-blue-900'>  <span className="text-pink-500">NEW</span>-Collection.</span>
+                                        <img className="w-20" src={logo} alt="" />
+                                        {/* <span className=' text-blue-900'>  <span className="text-pink-500">NEW</span>-Collection.</span> */}
                                     </Link>
                                     <button
                                         className='primary-color cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none'

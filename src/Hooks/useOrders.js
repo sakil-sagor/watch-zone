@@ -5,7 +5,7 @@ const useOrders = () => {
 
   useEffect(
     () => [
-      fetch("http://localhost:5000/orders")
+      fetch("https://fashion-zone-server-kappa.vercel.app/orders")
         .then((res) => res.json())
         .then((data) => setOrders(data)),
     ],

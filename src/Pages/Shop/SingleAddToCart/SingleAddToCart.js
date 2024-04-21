@@ -12,7 +12,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
 
   const handelUpdatefield = (id) => {
     const fullAddToCart = { quantity: totalquantity };
-    const url = `http://localhost:5000/addToCart/${id}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/addToCart/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -28,7 +28,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
   const handelCancel = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete it?");
     if (proceed) {
-      fetch(`http://localhost:5000/addToCart/${id}`, {
+      fetch(`https://fashion-zone-server-kappa.vercel.app/addToCart/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -54,7 +54,7 @@ const SingleAddToCart = ({ cart, carts, setCarts }) => {
             </div>
           </div>
           <div className="text-indigo-900 font-semibold text-right">
-            <p>$ {price}</p>
+            <p>Tk {price}</p>
           </div>
 
           <div>

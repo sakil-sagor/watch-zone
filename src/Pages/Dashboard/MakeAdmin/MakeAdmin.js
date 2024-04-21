@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`https://fashion-zone-server-kappa.vercel.app/users`)
       .then((res) => res.json())
       .then((data) => setAllAdmin(data));
   }, [success]);
@@ -17,7 +17,7 @@ const MakeAdmin = () => {
   // make an admin
   const handelMakeAdmin = (e) => {
     const user = { admin };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://fashion-zone-server-kappa.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

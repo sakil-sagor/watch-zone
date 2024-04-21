@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
-import Payment from '../../Dashboard/Payment/Payment';
+import method from '../../../images/method.jpg';
 import OrderPayment from '../OrderPayment/OrderPayment';
-import method from '../../../images/method.jpg'
 
 const OrderNow = ({ product, orders }) => {
     const { user } = useAuth();
@@ -78,7 +76,7 @@ const OrderNow = ({ product, orders }) => {
                                     </div>
                                 </div>
                                 <div className="text-indigo-900 font-semibold text-right">
-                                    <p>$ {price}</p>
+                                    <p>Tk {price}</p>
                                 </div>
                             </div>
                             <div className="text-indigo-900 font-semibold">
@@ -87,7 +85,7 @@ const OrderNow = ({ product, orders }) => {
                             <hr className="my-6" />
 
                             <div className="text-indigo-900 font-semibold">
-                                <p className="text-right">Total : $ {unitPrice}</p>
+                                <p className="text-right">Total : Tk {unitPrice}</p>
                             </div>
                         </div>
                     </div>

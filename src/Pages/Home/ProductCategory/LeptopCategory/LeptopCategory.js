@@ -5,7 +5,7 @@ const LeptopCategory = () => {
     return (
         <div className='py-12 '>
             <div >
-                <AllProductCategory Category="Saree" ></AllProductCategory>
+                <AllProductCategory Category="shawl" ></AllProductCategory>
             </div>
         </div>
     );

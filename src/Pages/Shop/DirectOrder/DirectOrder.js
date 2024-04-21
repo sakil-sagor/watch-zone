@@ -9,7 +9,7 @@ const DirectOrder = () => {
   };
   const { productId } = useParams();
   useEffect(() => {
-    const url = `http://localhost:5000/products/${productId}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/products/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));

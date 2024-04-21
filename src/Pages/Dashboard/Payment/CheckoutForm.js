@@ -21,11 +21,14 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://fashion-zone-server-kappa.vercel.app/create-payment-intent",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
@@ -54,7 +57,6 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
       setSuccess("");
     } else {
       setError("");
-      console.log("[PaymentMethod]", paymentMethod);
     }
 
     // payment intent
@@ -75,7 +77,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
       setError("");
 
       setSuccess("Your Payment Processed successfully");
-      console.log(paymentIntent);
+
       setProcessing(false);
 
       // order save to database
@@ -85,9 +87,8 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
         last4: paymentMethod.card.last4,
         transaction: paymentIntent.client_secret.slice("_secret"),
       };
-      console.log(payFullOrder);
 
-      fetch(" http://localhost:5000/orders", {
+      fetch(" https://fashion-zone-server-kappa.vercel.app/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -103,9 +104,12 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
         });
       // add to cart delete
       if (payFullOrder.addToCartId) {
-        fetch(`http://localhost:5000/addToCart/${payFullOrder.addToCartId}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://fashion-zone-server-kappa.vercel.app/addToCart/${payFullOrder.addToCartId}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {});
       }
@@ -146,7 +150,7 @@ const CheckoutForm = ({ totalprice, fullOrder }) => {
                 : "text-indigo-900 font-semibold text-lg py-2 px-4 border-blue-800 border hover:bg-indigo-900 hover:text-white rounded-lg"
             }
           >
-            Pay ${price}
+            Pay Tk {price}
           </button>
         )}
       </form>

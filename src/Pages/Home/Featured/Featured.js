@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import ban1 from '../../../images/25.jpg'
-import ban2 from '../../../images/26.jpg'
-import ban3 from '../../../images/23.jpg'
-import ban4 from '../../../images/24.jpg'
+import ban4 from '../../../images/a15.webp';
+import ban2 from '../../../images/a2.jpg';
+import ban3 from '../../../images/a6.jpg';
+import ban1 from '../../../images/a9.webp';
 import SectionTitle from '../../Shared/SectionTitle';
 
 const Featured = () => {

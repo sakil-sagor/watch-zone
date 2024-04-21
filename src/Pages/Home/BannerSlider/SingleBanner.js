@@ -1,14 +1,15 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 const SingleBanner = ({ banner }) => {
     const { img, rating, price } = banner;
-    console.log(banner);
+
     return (
         <div className='border rounded '>
-            <div className='h-96 rounded'>
-                <img className='h-96 rounded' src={img} alt="" />
-            </div>
-
+            <Link to={`shop/${banner?._id}`}>
+                <div className='h-96 rounded'>
+                    <img className='h-96 rounded' src={img} alt="" />
+                </div>
+            </Link>
             {/* <div className=" bg-pink-800 py-2 px-2 absolute bottom-0 w-full opacity-90 flex justify-between items-center">
                 <div>
                     <span className="text-white font-semibold">Price:   {price} </span>

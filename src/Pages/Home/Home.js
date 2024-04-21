@@ -1,9 +1,9 @@
 import React from 'react';
-import AllReviews from './AllReviews/AllReviews';
 import BannerSlider from './BannerSlider/BannerSlider';
 import Featured from './Featured/Featured';
 import Header from './Header/Header';
 import HomeProducts from './HomeProducts/HomeProducts';
+import LocationFind from './LocationFind/LocationFind';
 import ProductCategory from './ProductCategory/ProductCategory';
 
 const Home = () => {
@@ -19,7 +19,9 @@ const Home = () => {
             <hr />
             <Featured></Featured>
             <hr />
-            <AllReviews></AllReviews>
+            {/* <AllReviews></AllReviews> */}
+            <hr />
+            <LocationFind></LocationFind>
         </div>
     );
 };

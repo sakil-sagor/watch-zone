@@ -88,7 +88,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     // setIsLoading(true)
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://fashion-zone-server-kappa.vercel.app/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
@@ -98,7 +98,7 @@ const useFirebase = () => {
 
   const saveUser = (displayName, email, method) => {
     const user = { name: displayName, email: email, role: "" };
-    fetch("http://localhost:5000/users", {
+    fetch("https://fashion-zone-server-kappa.vercel.app/users", {
       method: method,
       headers: {
         "content-type": "application/json",

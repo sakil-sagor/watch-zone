@@ -22,7 +22,7 @@ const ProductTab = (props) => {
   };
   const handelReview = (e) => {
     const reviews = { ...review };
-    fetch(" http://localhost:5000/reviews", {
+    fetch(" https://fashion-zone-server-kappa.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,13 +31,20 @@ const ProductTab = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           alert("successfully published your feedback.");
         }
       });
     e.preventDefault();
   };
+
+  const sentence = description
+    ?.split(".")
+    .filter((sentence) => sentence.trim() !== "");
+
+  const descriptionParagraphs = sentence?.map((sentence, index) => (
+    <p key={index}>{sentence.trim() + "."}</p>
+  ));
 
   return (
     <div className="course-area-all ">
@@ -80,7 +87,7 @@ const ProductTab = (props) => {
             <h2 className="text-2xl mb-4 font-bold">Full Overview</h2>
             <p className="text-gray-500 text-base leading-8 text-justify">
               {" "}
-              {description}{" "}
+              {descriptionParagraphs}{" "}
             </p>
           </div>
         </div>

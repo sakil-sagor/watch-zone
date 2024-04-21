@@ -12,12 +12,10 @@ const Payment = () => {
   const { paymentId } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/addToCart/${paymentId}`)
+    fetch(`https://fashion-zone-server-kappa.vercel.app/addToCart/${paymentId}`)
       .then((res) => res.json())
       .then((data) => setOrderId(data));
   }, []);
-
-  console.log(orderId);
 
   return (
     <div className="">

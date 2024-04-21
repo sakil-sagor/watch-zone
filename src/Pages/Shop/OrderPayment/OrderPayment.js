@@ -1,7 +1,7 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React from 'react';
+
 import CheckoutForm from '../../Dashboard/Payment/CheckoutForm';
 
 

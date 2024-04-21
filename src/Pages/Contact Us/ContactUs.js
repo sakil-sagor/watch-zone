@@ -1,8 +1,8 @@
 import React from 'react';
+import { AiTwotoneMail } from 'react-icons/ai';
+import imgd2 from '../../images/4.jpg';
 import PageTitle from '../Shared/PageTitle';
-import { NavLink } from 'react-router-dom';
-import imgd2 from '../../images/4.jpg'
-import './ContacsUs.css'
+import './ContacsUs.css';
 
 const ContactUs = () => {
     return (
@@ -23,22 +23,28 @@ const ContactUs = () => {
                             <i class="fas fa-phone-alt text-indigo-500 text-4xl mr-4"></i>
                             <div className="text-gray-500">
                                 <h3 className="font-bold">CALL US ANYTIME</h3>
-                                <h3>+8801712365764</h3>
+                                <h3>+8801911 507160</h3>
                             </div>
                         </div>
                         <div className="border-b-2 py-6 flex justify-start  items-center" >
                             <i class="fas fa-map-marker-alt text-indigo-500 text-4xl mr-4"></i>
                             <div className="text-gray-500">
                                 <h3 className="font-bold"> VISIT US ANYTIME</h3>
-                                <h3>27/4 NewTola,KishoreGanj,Dhaka</h3>
+                                <h3>Mouchak Market, 1st floor, I-104,
+                                    Ramna, Dhaka-1217</h3>
                             </div>
                         </div>
                         <div className="border-b-2 py-6 flex justify-start  items-center" >
-                            <i class="far fa-calendar-check text-indigo-500 text-4xl mr-4"></i>
+                            <i class=" text-indigo-500 text-4xl mr-4">
+                                <AiTwotoneMail className=" text-3xl mr-2"></AiTwotoneMail>
+                            </i>
                             <div className="text-gray-500">
-                                <NavLink to='/appointment'>
-                                    <h3 className="cursor-pointer font-bold">EMERGENCY BOOKING</h3>
-                                </NavLink>
+
+                                <div>
+                                    <p className="font-semibold text-gray-500 text-lg">  Mail Us </p>
+                                    <p className="">info@newcollectionbd.com</p>
+                                    <p className="">newcollection7160@gmail.com</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -14,8 +14,7 @@ const AdminRoute = ({ children, ...rest }) => {
         return 'Loading for admin ...';
 
     }
-    console.log(admin);
-    console.log(isLoading);
+
     return (
         <Route
             {...rest}

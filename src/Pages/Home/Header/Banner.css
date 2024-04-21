@@ -1,10 +1,10 @@
-.banner-container {
+/* .banner-container {
 
     background-image: linear-gradient(rgb(247 247 247/10%), rgb(199 210 254)), url(../../../images/30.png);
     background-repeat: no-repeat;
     background-position: center right;
     background-size: auto;
-}
+} */
 
 .banner-home {
     background-image: linear-gradient(rgb(247 247 247), rgb(199 210 254));
@@ -25,4 +25,29 @@
         height: 350px;
         width: 350px;
     }
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

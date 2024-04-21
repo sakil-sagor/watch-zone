@@ -7,7 +7,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
-    const url = `http://localhost:5000/orders?email=${user.email}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/orders?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -16,7 +16,7 @@ const MyOrders = () => {
   const handelCancel = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete it?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://fashion-zone-server-kappa.vercel.app/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

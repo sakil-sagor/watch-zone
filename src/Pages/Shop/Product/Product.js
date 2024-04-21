@@ -5,8 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 import "./Product.css";
 
 const Product = (props) => {
-  const { _id, InStock, productName, model, rating, price, img } =
-    props.product;
+  const { _id, InStock, productName, rating, price, img } = props.product;
   // const [quentity, setQuentity] = useState(0);
   const { user } = useAuth();
 
@@ -22,7 +21,7 @@ const Product = (props) => {
       status: false,
     };
     if (user.email) {
-      fetch(" http://localhost:5000/addToCart", {
+      fetch("https://fashion-zone-server-kappa.vercel.app/addToCart", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -71,12 +70,10 @@ const Product = (props) => {
           <div>
             {InStock ? (
               <button onClick={addToCart}>
-                {" "}
                 <i class="fas fa-cart-plus text-pink-800 hover:text-indigo-900 text-2xl font-bold"></i>
               </button>
             ) : (
               <button>
-                {" "}
                 <i class="fas fa-cart-plus text-gray-800  text-2xl font-bold cursor-not-allowed"></i>
               </button>
             )}
@@ -86,12 +83,13 @@ const Product = (props) => {
           <div className="flex justify-between ">
             <div className="">
               <p className="text-indigo-900 font-bold text-sm">
-                {" "}
                 <i class="fas fa-star text-yellow-500"></i> {rating}
               </p>
             </div>
             <div className="text-gray-500">
-              <span className="text-md text-pink-800 font-bold">$ {price}</span>
+              <span className="text-md text-pink-800 font-bold">
+                Tk {price}
+              </span>
             </div>
           </div>
 
@@ -100,7 +98,6 @@ const Product = (props) => {
               className="transition duration-500 border border-indigo-900 text-indigo-900 text-sm bg-white hover:bg-indigo-900 hover:text-white px-2 py-2 rounded   d-button "
               to={`shop/${_id}`}
             >
-              {" "}
               Details
             </NavLink>
             {InStock ? (

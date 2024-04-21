@@ -9,7 +9,7 @@ const ManageOrders = () => {
   // load all orders
   useEffect(
     () => [
-      fetch("http://localhost:5000/orders")
+      fetch("https://fashion-zone-server-kappa.vercel.app/orders")
         .then((res) => res.json())
         .then((data) => setOrders(data)),
     ],
@@ -18,7 +18,7 @@ const ManageOrders = () => {
 
   // update order status
   let handelAccept = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -42,7 +42,7 @@ const ManageOrders = () => {
   const handelCancel = (id) => {
     const proceed = window.confirm("Are you sure, You want to delete it?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://fashion-zone-server-kappa.vercel.app/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

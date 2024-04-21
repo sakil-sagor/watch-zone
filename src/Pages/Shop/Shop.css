@@ -1,14 +1,15 @@
-.shop-page-banner{
+/* .shop-page-banner{
     background-image: linear-gradient(rgb(3 169 244 / 70%), #2a245ae8), url(../../images/22.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .cart-input:focus-visible{
-    outline: none;
-  }
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-     opacity: 1;
-    
-  }
+  } */
+.cart-input:focus-visible {
+  outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+
+}

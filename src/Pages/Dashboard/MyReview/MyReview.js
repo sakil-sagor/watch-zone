@@ -16,7 +16,7 @@ const MyReview = () => {
 
   const handelReview = (e) => {
     const reviews = { ...review };
-    fetch(" http://localhost:5000/reviews", {
+    fetch(" https://fashion-zone-server-kappa.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,6 @@ const MyReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           alert("successfully published your feedback.");
         }

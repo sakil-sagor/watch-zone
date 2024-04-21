@@ -6,14 +6,14 @@ const AddToCartOrder = () => {
   const [cartsOrder, setCartsOrder] = useState({});
 
   const { addToCartId } = useParams();
-  console.log(addToCartId);
+
   useEffect(() => {
-    const url = `http://localhost:5000/addToCart/${addToCartId}`;
+    const url = `https://fashion-zone-server-kappa.vercel.app/addToCart/${addToCartId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCartsOrder(data));
   }, []);
-  console.log(cartsOrder);
+
   const quantity = {
     ...cartsOrder,
   };

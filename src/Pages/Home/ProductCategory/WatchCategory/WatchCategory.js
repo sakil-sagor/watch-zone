@@ -4,7 +4,7 @@ const WatchCategory = () => {
     return (
         <div className='py-12 '>
             <div >
-                <AllProductCategory Category="Saree" ></AllProductCategory>
+                <AllProductCategory Category="saree" ></AllProductCategory>
             </div>
         </div>
     );

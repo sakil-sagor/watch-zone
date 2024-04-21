@@ -46,7 +46,7 @@ const Dashboard = () => {
                         <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/addProducts`}>Add Product</Link>
                     </div>
                     <div>
-                        <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/addBrands`}>Add Caegory</Link>
+                        <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/addBrands`}>Add Caetgory</Link>
                     </div>
                     <div>
                         <Link className=" block py-2 hover:bg-pink-800 hover:text-white rounded-lg" to={`${url}/makeAdmin`}>Make Admin </Link>

@@ -1,8 +1,7 @@
 import React from 'react';
 import PageTitle from '../Shared/PageTitle';
 import AboutSingleTab from './AboutSingleTab';
-import './AboutUs.css'
-import d3 from '../../images/4.jpg'
+import './AboutUs.css';
 
 const AboutUs = () => {
     return (
@@ -11,7 +10,7 @@ const AboutUs = () => {
             {/* Page title  */}
             <div className="login-page-banner text-white">
                 <PageTitle title="About Us"
-                    content="TIME ZONE is a very reputed and popular name for world class watches and writing instruments in Bangladesh. "
+                    content="New-Collection is a very reputed and popular name  in Bangladesh and over world. "
                 ></PageTitle>
             </div>
 
@@ -21,69 +20,147 @@ const AboutUs = () => {
                 <div className=" ">
                     {/* About page section  */}
                     <div className="py-16 shadow-xl  bg-white mb-24 p-4 rounded-lg">
-                        <h1 className="text-4xl font-semibold text-indigo-900 ">  Fashion Zone Watch Company LTD.</h1>
-                        <p className="text-gray-600 mt-8">We provide international  products &  many other services. We cater to a wide range of needs including Leisure & Business travel. Having a wide network around the world we provide holiday packages to 100+ destinations.
+                        <h1 className="text-4xl font-semibold text-indigo-900 ">  Embrace Elegance with New Collection – Your Ultimate Destination for Timeless Sarees..</h1>
+                        <p className="text-gray-600 mt-8">At the heart of our business is a deep-rooted appreciation for the rich cultural heritage of Bangladesh. We draw inspiration from the diverse traditions and artistry that span the length and breadth of the country. Our commitment to preserving and promoting these age-old crafts is reflected in every weave, motif, and design that graces our sarees.
                             <br />
-                            <br />
-                            Watches World Limited, a retail and a distribution house, with this concept started its journey in the year 2012 as a small entity in this country under one of the biggest conglomerates to be the sole enterprises to cater the world famous BRANDS of watches and accessories for easy access to the residents and citizen of Bangladesh.</p>
+                        </p>
                     </div>
                     <div>
                         {/* About page section  */}
-                        <div className="shadow-xl  bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4  rounded-lg">
-                            <div className="pb-24 pt-16 p-4 lg:col-span-7 ">
-                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">Time will make your life...</h1>
-                                <p className="text-justify   text-gray-600 ">   TIME ZONE is a very reputed and popular name for world class watches and writing instruments in Bangladesh.
+                        <div className="shadow-xl  bg-white  rounded-lg">
+                            <div className=" p-4  ">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">Quality Craftsmanship</h1>
+                                <p className="text-justify   text-gray-600 ">   We understand that a saree is not just a piece of clothing; it's a work of art that transcends generations. That's why each saree in our collection is a testament to the skill and dedication of our master craftsmen. From the intricate hand-embroidery to the delicate handloom weaves, every detail is meticulously crafted to ensure you receive nothing short of perfection.
                                     <br />
+
+                                </p>
+                            </div>
+                            <div className=" p-4 ">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">       Timeless Elegance</h1>
+                                <p className="text-justify   text-gray-600 ">
+
+
+                                    In a world that's constantly evolving, the charm of a saree remains timeless. Our curated collection blends the classic with the contemporary, offering a range that caters to the modern woman while respecting the authenticity of traditional craftsmanship. Whether you're attending a grand celebration or an intimate gathering, our sarees are designed to make you stand out with grace and poise.
                                     <br />
-                                    Watches World Limited, a retail and a distribution house, with this concept started its journey in the year 2012 as a small entity in this country under one of the biggest conglomerates to be the sole enterprises to cater the world famous BRANDS of watches and accessories for easy access to the residents and citizen of Bangladesh.</p>
+
+                                </p>
                             </div>
-                            <div className=" lg:col-span-5">
-                                <img className="w-full rounded-bl-3xl" src={d3} alt="" />
+                            <div className=" p-4 ">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">                              Diverse Collection</h1>
+                                <p className="text-justify   text-gray-600 ">
+
+
+
+
+                                    Dive into our extensive range of sarees, each telling a unique story through its fabric, colors, and design. From the vibrant hues of silk to the understated elegance of cotton, our collection caters to every taste and occasion. Whether you're a connoisseur of Banarasi silk or a lover of handwoven Kanjeevarams, we have the perfect saree waiting for you.
+                                    <br />
+
+                                </p>
                             </div>
+                            <div className=" p-4 ">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">          Customer-Centric Approach</h1>
+                                <p className="text-justify   text-gray-600 ">
+
+
+
+                                    Our customers are at the heart of everything we do. We strive to provide a seamless shopping experience, ensuring that you find the perfect saree that not only complements your style but also celebrates your individuality. Our dedicated team is always ready to assist you, ensuring that your journey with New Collection is nothing short of delightful.
+
+
+
+
+
+
+
+                                    <br />
+
+                                </p>
+                            </div>
+                            <div className=" p-4 ">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">      Sustainability</h1>
+                                <p className="text-justify   text-gray-600 ">
+
+
+                                    As custodians of culture, we are committed to sustainable and ethical practices. Our sarees are crafted with utmost respect for the environment, and we actively promote fair trade practices to support the artisans who bring our creations to life. When you choose New Collection, you choose not just a piece of clothing but a conscious step towards preserving our cultural heritage.
+                                    <br />
+
+                                </p>
+                            </div>
+                            <div className=" p-4 pb-16">
+                                <h1 className="text-4xl mb-8 font-semibold text-indigo-900 ">     Visit Us</h1>
+                                <p className="text-justify   text-gray-600 ">
+
+
+                                    Step into the world of timeless elegance by exploring our retail and wholesale store or visiting our physical location. Discover the allure of tradition and the allure of the contemporary, woven seamlessly into every saree at New Collection.
+
+                                    Embrace the beauty of tradition. Embrace the allure of New Collection.
+                                    <br />
+
+                                </p>
+                            </div>
+
                         </div>
 
                         {/* about page props AboutSingle component here */}
 
                         <div className="my-24">
-                            <h1 className="text-4xl mb-8 text-center font-semibold text-indigo-900 ">Our Values</h1>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <h1 className="text-4xl mb-8 text-center font-semibold text-indigo-900 "></h1>
+                            <div className="grid md:grid-cols-2 gap-8">
                                 <AboutSingleTab
-                                    title="Best Guide"
-                                    desc="We give you the subspecialty training focusing on a particular area of the fields, these training programs are called fellowships, and are one to two years."
+                                    title="Our Mission"
+                                    desc="At New Collection, our mission is to celebrate the timeless elegance of Bangladeshi heritage Sharee and Indian sarees, preserving and promoting the rich cultural heritage embedded in each thread. We are dedicated to providing our customers with a curated collection that seamlessly blends tradition and trend, fostering a sense of pride and grace in every woman who adorns our sarees."
                                 ></AboutSingleTab>
                                 <AboutSingleTab
-                                    title="Package Offer"
-                                    desc="We provide you the best prices package. Analyzing the radon or radon progeny concentrations calibrating radon or radon progeny measurement devices."
+                                    title="Our Vision"
+                                    desc="Our vision at New Collection is to be the epitome of excellence in the world of sarees. We aspire to be the preferred choice for individuals seeking not just clothing but a connection to tradition, craftsmanship, and enduring style. We envision a global community that recognizes and embraces the cultural significance woven into each saree we offer."
                                 ></AboutSingleTab>
-                                <AboutSingleTab
-                                    title=" Money-Back Guranty"
-                                    desc="For people requiring additional follow up, the we provides rapid access to professionals specialized in Traveling and treating places."
-                                ></AboutSingleTab>
-                                <AboutSingleTab
-                                    title="After Services"
-                                    desc="We make the  bridge between science and nature. And we make it. Also it underpins every aspect of travel care, from  testing and treatment.  "
-                                ></AboutSingleTab>
+
                             </div>
                         </div>
                         {/* About page bottom area  */}
                         <div className="shadow-xl  bg-white grid grid-cols-12  items-center about-bottom-banner border border-white">
                             <div className="sm:ml-8 pb-24 pt-16 col-span-12 sm:col-span-8 py-4 px-2">
                                 <h1 className="text-3xl mb-8 font-semibold text-white ">
-                                    The better we do, the more good we can do.
+                                    Our Goals:
                                 </h1>
-                                <p className="text-justify   text-white ">
-                                    Alison was founded in Galway, Ireland, in 2007 and has grown organically to become a major force in free online education and skills training. Today, with more than 20 million learners in 195 countries, Alison is changing how the world learns and up-skills.
-                                    <br />
-                                    <br />
+                                <div className='p-4'>
+                                    <p className='mb-2 text-white font-semibold text-lg'>1.     Quality Craftsmanship:</p>
+                                    <ul className='text-white  '>
+                                        <li>
+                                            - To consistently deliver sarees of the highest quality, showcasing the impeccable craftsmanship of skilled artisans.
+                                        </li>
+                                        <li>
+                                            -  To continually innovate and introduce new designs while preserving the authenticity of traditional weaving techniques.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className='p-4'>
+                                    <p className='mb-2 text-white font-semibold text-lg'>     3.     Cultural Preservation:</p>
+                                    <ul className='text-white  '>
+                                        <li>
+                                            -     To actively contribute to the preservation of traditional Bangladeshi heritage Sharee and Indian sarees textile arts and crafts.
 
-                                    We are committed to equality and access to education and skills training irrespective of gender, geography, economic status or any other barriers that can so often stunt potential. So we offer a range of free courses that meet the many diverse needs of our learners. The UN declared in Article 26 of the 1946 Declaration of Human Rights that “Education shall be free…”. This statement will always inspire us.
-                                    <br />
-                                    <br />
-                                    Alison was founded by Alison CEO, Mike Feerick. Mike is a businessman, but one with a difference. He believes in social impact, and that you can build a financially successful business focused on meeting a huge global social need, making education and skills training more accessible for everyone. He invites anyone who believes that too, to support the Alison mission.
-                                    <br />
-                                    <br />
-                                    Alison is free of charge to you. But it’s still a business – albeit a socially-focused one. We are a social enterprise making our money through advertising, merchandise, and the sale of Certificates and Diplomas, should a graduate choose to buy one.
-                                </p>
+                                        </li>
+                                        <li>
+
+                                            -       To support and uplift local artisans and weavers, promoting fair trade practices and sustainable production methods.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className='p-4'>
+                                    <p className='mb-2 text-white font-semibold text-lg'>     4.     Global Reach:</p>
+                                    <ul className='text-white  '>
+                                        <li>
+                                            -  To expand our reach globally, making our collection accessible to saree enthusiasts around the world.
+                                        </li>
+                                        <li>
+
+
+                                            -    To participate in international events and collaborations, promoting Bangladeshi heritage Sharee and Indian sarees on the global stage.
+                                        </li>
+                                    </ul>
+                                </div>
+
+
                             </div>
                             <div className="sm:col-span-4">
                             </div>

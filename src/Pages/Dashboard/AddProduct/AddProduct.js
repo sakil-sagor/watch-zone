@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = () => {
   const initialValu = {
     InStock: true,
-    // WaterResistance: '3 ATM',
-    // Warranty: '1 Year Brand Warranty (For detail, please see warratny information page under help center)'
   };
   const [productData, setProductData] = useState(initialValu);
   const [allCategory, setAllCategory] = useState([]);
   const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
+  const [categoryName, setCategoryName] = useState("saree");
 
   const handelfield = (e) => {
     const field = e.target.name;
@@ -28,12 +29,12 @@ const AddProduct = () => {
   const getPrice = useRef("");
   const getRating = useRef("");
   const getColor = useRef("");
-  const getImg = useRef("");
+  const getSubCategory = useRef("");
 
   // load all orders
   useEffect(
     () => [
-      fetch("http://localhost:5000/allBrands")
+      fetch("https://fashion-zone-server-kappa.vercel.app/allBrands")
         .then((res) => res.json())
         .then((data) => setAllCategory(data)),
     ],
@@ -41,7 +42,7 @@ const AddProduct = () => {
   );
 
   const uploadImageToImgBB = async (imageFile) => {
-    const apiKey = "82ec2763f04d19d197f1451e6935abfe";
+    const apiKey = "9412af495941411a92b93242ceea1281";
     const formData = new FormData();
     formData.append("image", imageFile);
 
@@ -69,14 +70,23 @@ const AddProduct = () => {
     }
   };
 
+  const sareeSubCategory = allCategory.filter(
+    (cat) => cat.category === "saree"
+  );
+  const lugniSubCategory = allCategory.filter(
+    (cat) => cat.category === "lungi"
+  );
+  const shawlSubCategory = allCategory.filter(
+    (cat) => cat.category === "shawl"
+  );
+
   const handelRegister = async (e) => {
     e.preventDefault();
     const imageUrl = await uploadImageToImgBB(imageFile);
-    // state.image = imageUrl;
-    console.log(imageUrl);
+    // state.image = imageUrl
     const product = { ...productData, img: imageUrl };
-    console.log(product);
-    fetch("http://localhost:5000/products", {
+
+    fetch("https://fashion-zone-server-kappa.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -86,8 +96,16 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("success");
-          // getCategory.current.value = getGender.current.value = getDes.current.value = getName.current.value = getPrice.current.value = getRating.current.value = getColor.current.value = getImg.current.value = '';
+          toast.success("success");
+          getCategory.current.value =
+            getGender.current.value =
+            getDes.current.value =
+            getName.current.value =
+            getPrice.current.value =
+            getRating.current.value =
+            getColor.current.value =
+            getSubCategory.current.value =
+              "";
         }
       });
 
@@ -97,32 +115,63 @@ const AddProduct = () => {
   return (
     <div>
       <div className="bg-blue-100 py-24 rounded-lg">
-        <div className="m-auto container full-width-all m-auto">
+        <div className="m-auto container full-width-all ">
           <h2 className="text-center text-3xl"> Add a new Product </h2>
           <div className="m-auto md:w-8/12 px-2">
             <form onSubmit={handelRegister} className="register-form mt-6">
-              <div>
-                <select
-                  required
-                  className="py-2 px-4 w-full text-lg  rounded-md "
-                  name="Category"
-                  onBlur={handelfield}
-                  ref={getCategory}
-                >
-                  <option className="" value="" disabled selected>
-                    Select Product Category{" "}
-                  </option>
-                  {allCategory.map((category, ind) => (
-                    <option key={ind}> {category?.brandName}</option>
-                  ))}
-                </select>
+              <div className="flex gap-4">
+                <div className="w-1/2">
+                  <select
+                    required
+                    className="py-2 px-4 w-full text-lg  rounded-md "
+                    name="Category"
+                    onChange={handelfield}
+                    onBlur={(e) => setCategoryName(e.target.value)}
+                    ref={getCategory}
+                  >
+                    <option className="" value="" disabled selected>
+                      Select Product Category{" "}
+                    </option>
+
+                    <option value="saree"> saree</option>
+                    <option value="lungi"> lungi</option>
+                    <option value="shawl">shawl</option>
+                  </select>
+                </div>
+
+                <div className="w-1/2">
+                  <select
+                    required
+                    className="py-2 px-4 w-full text-lg  rounded-md "
+                    name="subCategory"
+                    onBlur={handelfield}
+                    ref={getSubCategory}
+                  >
+                    <option className="" value="" disabled selected>
+                      Select Product Category{" "}
+                    </option>
+                    {categoryName === "saree" &&
+                      sareeSubCategory.map((category, ind) => (
+                        <option key={ind}> {category?.subCategory}</option>
+                      ))}
+                    {categoryName === "lungi" &&
+                      lugniSubCategory.map((category, ind) => (
+                        <option key={ind}> {category?.subCategory}</option>
+                      ))}
+                    {categoryName === "shawl" &&
+                      shawlSubCategory.map((category, ind) => (
+                        <option key={ind}> {category?.subCategory}</option>
+                      ))}
+                  </select>
+                </div>
               </div>
               {/* <div>
                                 <select required className="py-2 px-4 w-full text-lg  rounded-md " name="Category" onBlur={handelfield} ref={getCategory}>
                                     <option className='' value="" disabled selected>Select Product Category </option>
-                                    <option> mobile</option>
-                                    <option> leptop</option>
-                                    <option> watch</option>
+
+                                    <option value='saree'> saree</option>
+                                    <option value="lungi"> lungi</option>
+                                    <option value='shawl'>shawl</option>
 
                                 </select>
                             </div> */}
@@ -236,6 +285,7 @@ const AddProduct = () => {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-center" autoClose={1000} theme="colored" />
     </div>
   );
 };
